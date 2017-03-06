@@ -1,0 +1,40 @@
+.painting1, .painting2 {
+	h2 {
+		font: {
+			size: 1rem;
+		};
+		margin: {
+			top: 1rem;
+			bottom: 0;
+		};
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.topic {
+		bottom: 15px;
+	}
+}
+
+.painting1 {
+	img {
+		width: 750px;
+	}
+}
+
+.painting2 {
+	img {
+		width: 670px;
+	}
+}
+
+.remark-slide-container {
+	&:nth-child(10), &:nth-child(13), &:nth-child(14) {
+		.topic {
+			bottom: 15px;
+		}
+	}
+}

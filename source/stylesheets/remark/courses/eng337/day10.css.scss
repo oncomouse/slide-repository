@@ -1,0 +1,24 @@
+@import "bourbon";
+
+$modular-scale-ratio: $golden;
+
+.daisy_miller_title {
+	margin: {
+		top: modular-scale(3,1em);
+	};
+	font: {
+		size: 1.5em;
+	};
+}
+
+.small {
+	font: {
+		size: 0.95em;
+	};
+
+	.topic {
+		font: {
+			size: (1.5em / 0.95);
+		};
+	}
+}

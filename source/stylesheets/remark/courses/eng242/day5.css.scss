@@ -1,0 +1,40 @@
+@import "bourbon";
+@import "neat";
+
+.activity {
+	ul, ol {
+		li {
+			line-height: 1.5;
+		}
+	}
+
+	.left-column {
+		@include grid-column(4);
+	}
+
+	.right-column {
+		@include grid-column(8);
+
+		;
+
+		margin: {
+			top: 0;
+		};
+		padding: {
+			top: 0;
+		};
+	}
+}
+
+.credo {
+	p {
+		margin: {
+			left: 0.5in;
+			bottom: 0;
+			top: 0;
+		};
+		text: {
+			indent: -0.5in;
+		};
+	}
+}

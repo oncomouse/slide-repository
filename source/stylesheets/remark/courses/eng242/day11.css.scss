@@ -1,0 +1,27 @@
+.chicago, .skyscraper {
+	p {
+		line-height: 1.25;
+	}
+}
+
+.chicago {
+	p {
+		font-size: 0.67rem;
+	}
+
+	.topic {
+		font-size: (1.5em / 0.67);
+		line-height: 1.25rem;
+	}
+}
+
+.skyscraper {
+	p {
+		font-size: 0.57rem;
+	}
+
+	.topic {
+		font-size: (1.5em / 0.57);
+		line-height: 1.25rem;
+	}
+}

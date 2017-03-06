@@ -1,0 +1,81 @@
+@import "../themes/default/colors";
+
+li {
+	margin-bottom: 1em;
+}
+
+.alaska, .psychogeography, .utah {
+	img {
+		width: 95%;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+.author {
+	h2, h3 {
+		font: {
+			weight: 600;
+		};
+	}
+}
+
+.left-column {
+	margin-top: 3em;
+
+	h3 {
+		font-size: 1.1rem;
+		opacity: 0.5;
+	}
+
+	.current {
+		h3 {
+			opacity: 1;
+			color: $emphasis_color;
+		}
+	}
+}
+
+.metadata {
+	blockquote {
+		font-size: 0.95em;
+	}
+}
+
+.dancing-bug1, .dancing-bug2, .dancing-bug3 {
+	img {
+		position: absolute;
+		width: 600px;
+	}
+
+	.copyright {
+		position: absolute;
+		top: 429px;
+		left: 455px;
+
+		h3 {
+			font-size: 1rem;
+		}
+	}
+}
+
+.dancing-bug1 {
+	img {
+		top: 112px;
+		clip: rect(58px, 584px, 302px, 0px);
+	}
+}
+
+.dancing-bug2 {
+	img {
+		top: -137px;
+		clip: rect(307px, 584px, 551px, 0px);
+	}
+}
+
+.dancing-bug3 {
+	img {
+		top: -386px;
+		clip: rect(552px, 584px, 797px, 0px);
+	}
+}

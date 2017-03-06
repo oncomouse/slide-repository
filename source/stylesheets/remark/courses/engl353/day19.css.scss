@@ -1,0 +1,55 @@
+.fruit {
+	.pull-left {
+		width: 58%;
+	}
+	.pull-right {
+		width: 36%;
+	}
+}
+
+.histories {
+	img{
+		max-width: 55%;
+	}
+}
+
+.audience {
+	.pull-left{
+		width: 27%;
+		img {
+			margin-top: 1.35rem;
+		}
+	}
+	.pull-right {
+		width:73%;
+	}
+}
+
+.lucifer {
+	.crop {
+		overflow: hidden;
+		margin: auto auto -3rem;
+		height: 262px;
+		img {
+			margin-top: -5px;
+			max-width: 54%;
+		}
+	}
+}
+.metaphor{
+	.pull-right{
+		width: 32%;
+		img {
+			margin-top: 1.35rem;
+		}
+	}
+	.pull-left {
+		width:68%;
+	}
+}
+
+.persuasion {
+	img{
+		max-width: 60%;
+	}
+}

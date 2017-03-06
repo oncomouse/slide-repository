@@ -1,0 +1,15 @@
+.doll {
+	img {
+		width: 90%;
+	}
+}
+
+.small {
+	font: {
+		size: 0.85em;
+	};
+
+	.topic {
+		font-size: (1.5em / 0.85);
+	}
+}

@@ -1,0 +1,15 @@
+.small {
+	p {
+		margin-top: 0.9em;
+	}
+
+	font: {
+		size: 0.95em;
+	};
+
+	.topic {
+		font: {
+			size: (1.5em / 0.95);
+		};
+	}
+}

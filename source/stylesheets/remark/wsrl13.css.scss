@@ -1,0 +1,19 @@
+@import "themes/solarized/solarized";
+
+.inverse {
+	h1 {
+		color: $base3;
+	}
+
+	h2 {
+		color: $magenta;
+	}
+}
+
+$progress_color: $blue;
+$left_column_current_color: $magenta;
+
+div.footnote {
+	left: 50%;
+	text-align: right;
+}

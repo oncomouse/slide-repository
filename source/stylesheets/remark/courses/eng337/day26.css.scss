@@ -1,0 +1,86 @@
+.rinehart {
+	font: {
+		size: 0.85em;
+	}
+	* {
+		line-height: 1.25;
+	}
+	.one {
+		width: 50%;
+		text-align: left;
+		margin: 0 auto {
+			bottom: 1em;
+		};
+	}
+	.two {
+		width: 75%;
+		text-align: left;
+		margin: 0 auto {
+			bottom: 1em;
+		};
+	}
+	.indent {
+		text-align: right;
+	}
+}
+
+.church {
+	font: {
+		size: 0.9em;
+	};
+	.topic {
+		font-size: (1.5em / 0.9);
+	}
+}
+
+.light {
+	font: {
+		family: "Georgia";
+		size: 0.9em;
+	};
+}
+
+.definition {
+	ol {
+		li {
+			margin: {
+				bottom: 1em;
+			};
+			li {
+				margin: {
+					bottom: 0;
+				};
+			}
+		}
+	}
+	ul {
+		padding-left: 0;
+	}
+}
+
+.small {
+	font-size: 0.90em;
+}
+
+.smaller {
+	font-size: 0.80em;
+}
+
+.dream {
+	blockquote {
+		font-style: italic;
+	}
+}
+
+.dream {
+	font: {
+		size: 0.85em;
+	};
+	p {
+		margin-top: 1em;
+		line-height: 1.25;
+	}
+	.topic {
+		font-size: (1.5em / 0.8);
+	}
+}

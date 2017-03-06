@@ -1,0 +1,58 @@
+@import "bourbon";
+@import "neat";
+
+.image {
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 95%;
+	}
+}
+
+.wallacestevens {
+	img {
+		width: 58% !important;
+	}
+}
+
+.ezrapound {
+	img {
+		width: 45% !important;
+	}
+}
+
+.plums, .barrow {
+	h2 {
+		text-align: center;
+	}
+
+	blockquote {
+		@include grid-column(4);
+
+		@include grid-push(4);
+	}
+}
+
+.reply {
+	h2 {
+		text-align: center;
+	}
+
+	blockquote {
+		@include grid-column(6);
+
+		@include grid-push(3);
+
+		font-size: 0.95em;
+
+		p:first-child {
+			margin-top: 0;
+			text-align: center;
+		}
+
+		p {
+			margin-top: 0.95em;
+			line-height: 1.15rem;
+		}
+	}
+}

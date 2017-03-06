@@ -1,0 +1,45 @@
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700) all and (min-width: 33.236em)
+@import url(fonts/opensans/opensans.css);
+
+$times: "Times New Roman", Times, serif;
+
+$body-font: "Open Sans", $helvetica;
+$body-font-weight: 400;
+$body-font-strong-weight: 700;
+$header-font: "Open Sans", $helvetica;
+$header-font-weight: 600;
+$header-font-soft-weight: 400;
+
+@media all and (max-width: 30em) {
+	body {
+		font: {
+			size: 16px !important;
+		};
+	}
+}
+
+html {
+	font: {
+		family: $body-font;
+		weight: $body-font-weight;
+	};
+
+	strong {
+		font: {
+			weight: $body-font-strong-weight;
+		};
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	font: {
+		family: $header-font;
+		weight: $header-font-weight;
+	};
+
+	.soft {
+		font: {
+			weight: $header-font-soft-weight;
+		};
+	}
+}

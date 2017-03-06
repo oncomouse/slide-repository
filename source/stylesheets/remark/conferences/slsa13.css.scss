@@ -1,0 +1,48 @@
+.title {
+	h1 {
+		font-size: 2.12em;
+
+		.subtitle {
+			font-size: (1.8em / 2.12);
+		}
+	}
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+
+h2 {
+	margin: {
+		bottom: 1em;
+	};
+}
+
+.yarn-conditioning {
+	img {
+		height: 500px;
+	}
+}
+
+.carnegie-mansion {
+	img {
+		width: 95%;
+	}
+}
+
+.brooklyn-bridge {
+	img {
+		width: 85%;
+	}
+}
+
+.moor {
+	h1 {
+		color: #000;
+	}
+
+	h2 {
+		font-size: 1.25em;
+	}
+}

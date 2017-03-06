@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+body {
+	font: {
+		family: "Lato", "Helvetica", sans-serif;
+	};
+}
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+}
+
+h1 {
+	font: {
+		size: 4em;
+	};
+}
+
+ul {
+	list: {
+		style: none;
+	};
+	margin: 0;
+	padding: 0 {
+		top: 1em;
+	};
+
+	li {
+		margin: 0 {
+			top: 1em;
+			bottom: 1em;
+		};
+		padding: 0;
+	}
+}
+
+li, p {
+	font: {
+		size: 2.5em;
+	};
+}
+
+a {
+	color: #000;
+
+	&:hover {
+		color: #fff;
+		background: #d33682;
+	}
+}

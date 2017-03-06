@@ -1,0 +1,393 @@
+@import "typebase";
+@import "bourbon";
+@import "neat";
+@import "themes/default/default";
+
+//.remark-fading {
+//	z-index: 9;
+//}
+//.remark-slide-container {
+//	transition: opacity 0.5s linear, right 1s ease-in-out;
+//	opacity: 0;
+//	right: 1000px;
+//}
+//.remark-visible {
+//	transition: opacity 0.5s linear, right 1s ease-in-out;
+//	opacity: 1;
+//	right: 0px;
+//}
+//.remark-visible ~ .remark-slide-container {
+//	right: -1000px;
+//}
+
+/* Basic Item Formatting */
+
+hr {
+	width: 80%;
+	border: 0;
+	height: 1px;
+	color: black;
+	background: black;
+	margin: 2em auto;
+}
+
+code {
+	overflow: auto;
+}
+
+#slideshow {
+	.slide {
+		.content {
+			code {
+				font-size: 0.8em;
+			}
+			pre code {
+				font-size: 0.9em;
+				padding: 15px;
+			}
+		}
+	}
+}
+
+/* Two-column layout */
+.remark-slide-content {
+	@include grid-container;
+	& > h1,& > h2,& > h3,& > h4,& > h5,& > h6 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.left-column {
+	height: 92%;
+	@include grid-column(3);
+}
+
+.right-column {
+	@include grid-column(9);
+	padding: {
+		top: 2em;
+	};
+	.big {
+		font: {
+			size: 1.5em;
+		};
+	}
+}
+
+.middle {
+	& > *:first-child {
+		margin-top: 0;
+	}
+}
+
+/* Utility Classes */
+
+.no-margin {
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.blockquote {
+	display: block;
+	margin: {
+		left: 0.5em;
+	};
+	font: {
+		size: 1.15em;
+	};
+	line-height: 1.4em;
+}
+
+.inverse {
+	h1 {
+		line-height: 0.8em;
+		margin: {
+			bottom: 1.618em;
+		};
+	}
+}
+
+.pull-left {
+	float: left;
+	width: 47%;
+}
+
+.pull-right {
+	float: right;
+	width: 47%;
+}
+
+.pull-right ~ p {
+	clear: both;
+}
+
+.bigger, .bullets {
+	ul li, ol li, p {
+		font: {
+			size: 1.67rem;
+		};
+		line: {
+			height: 2.5rem;
+		};
+	}
+	.topic {
+		font-size: (1.5em / 1.67);
+		line-height: 1.25rem;
+	}
+	.remark-slide-number {
+		line-height: 1.33rem;
+	}
+}
+.pushdown {
+	& > h1,h2,h3,h4,h5 {
+		&:first-child {
+			margin-top: 5rem;
+		}
+	}
+}
+p {
+	.big {
+		font: {
+			size: 1.33rem;
+		};
+		line: {
+			height: 2rem;
+		};
+	}
+	.bigger {
+		font: {
+			size: 1.67rem;
+		};
+		line: {
+			height: 2.5rem;
+		};
+	}
+
+}
+ul li, ol li, p {
+	.normal {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}
+
+.small {
+	ul li, ol li {
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+}
+
+.source {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	bottom: 2rem;
+	position: absolute;
+}
+
+.big, .bullets {
+	ul li, ol li, p {
+		.normal {
+			font-size: 1rem;
+			line-height: 1.25rem;
+		}
+		font: {
+			size: 1.33rem;
+		};
+		line: {
+			height: 2rem;
+		};
+	}
+	.topic {
+		font-size: (1.5em / 1.33);
+		line-height: 1.25rem;
+	}
+	.remark-slide-number {
+		line-height: 1.33rem;
+	}
+}
+
+.no-bullets {
+	ol, ul {
+		list-style: none;
+	}
+}
+
+.agenda, .topic {
+	font: {
+		family: $header-font;
+		weight: $header-font-weight;
+	};
+}
+$modular-scale-ratio: $golden;
+.agenda {
+	@include grid-column(6);
+	@include grid-push(3);
+	text: {
+		align: left;
+	};
+	font: {
+		size: 2.4em;
+	};
+	line-height: modular-scale(1,1em);
+	ol {
+		li {
+			line-height: 1em;
+			margin: {
+				bottom: 0.5em;
+			};
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	max-height: 565px;
+}
+
+.topic {
+	font: {
+		size: 1.5em;
+	};
+	display: block;
+	position: absolute;
+	bottom: 14px;
+	right: 10%;
+	color: $emphasis_color;
+}
+
+.title-block {
+	margin: 1.75em 0;
+	h1,h2,h3,h4,h5 {
+		line-height: 1.1em;
+		margin: 0;
+	}
+}
+
+.title {
+	h1 {
+		font-size: 2.4em;
+		color: $title_color;
+		.subtitle {
+			font-size: (2em / 2.4);
+			color: $subtitle_color;
+		}
+	}
+	h2 {
+		font: {
+			size: 1.4em;
+			weight: normal;
+		};
+	}
+	h3 {
+		font: {
+			size: 1.2em;
+			weight: normal;
+		};
+	}
+}
+
+.works-cited {
+	ul, ol {
+		list: {
+			style-type: none;
+		};
+		padding: {
+			left: 0;
+		};
+		li {
+			padding: {
+				left: 0.5in;
+			};
+			text: {
+				indent: -0.5in;
+			};
+			margin: {
+				bottom: 1em;
+			};
+		}
+	}
+	.ibid {
+		display: inline-block;
+		width: 1in;
+		height: 1px;
+		background: $base_font_color;
+		margin: {
+			bottom: 0.5em;
+		};
+	}
+}
+
+/* Twitter Name on Each Slide */
+.twitter_name {
+	position: absolute;
+	bottom: 14px;
+	left: 20px;
+	font-weight: bold;
+	opacity: 0.75;
+	text-align: left;
+}
+
+.phantom {
+	color: white !important;
+	img, img.phantom {
+		opacity: 0;
+	}
+}
+
+
+/* Include a Twitter Icon */
+.twitter_badge {
+	position: relative;
+	margin-left: 1.15em;
+	&:before, &:after {
+		font-family: "icomoon";
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		font: {
+			size: 0.95em;
+		};
+	}
+	&:before {
+		content: "\22";
+		position: absolute;
+		top: 0.3em;
+		left: -1.15em;
+	}
+}
+
+// Slide font size utility:
+@for $i from 18 through 70 {
+	.f#{$i}px {
+		p, li {
+			font-size: $i * 1px;
+			line-height: 1.4;
+		}
+		small {
+			font-size: $i * 0.85px;
+		}
+	}
+	span.f#{$i}px {
+		font-size: $i * 1px;
+		line-height: 1.4;
+	}
+}
+
+.two-column {
+	column-count: 2;
+	column-width: 44%;
+	column-gap: 6%;
+	column-fill: auto;
+	h2 {
+		column-span: all;
+	}
+}

@@ -1,0 +1,11 @@
+$indent: 75px;
+
+.summary{
+	p {
+		text-indent: -1 * $indent;
+		padding-left: $indent;
+	}
+	strong {
+		color: black;
+	}
+}

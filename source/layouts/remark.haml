@@ -1,0 +1,136 @@
+- # First detect if we have options passed in by a proxy or not.
+- # In config.rb, any .html.markdown files are proxied to a template file. That template file
+- # is also passed the markdown files YAML metadata. We are detecting here if that metadata
+- # is present. If it isn't, we use the template file's metadata.
+- #
+- # Additionally, if the file is a .html.haml file, we just it's native metadata and don't
+- # worry about any of this.
+- if defined? yaml_options and yaml_options.is_a? Hash and yaml_options.length > 0
+	- slide_configuration_data = yaml_options
+- else
+	- slide_configuration_data = current_resource.data
+
+- # This is all of our switches to control the display:
+
+- # Load the slideshow source:
+- if locals and locals.has_key? :markdown_source
+	- slideshow_source = File.open(Dir.pwd + "/source/#{locals[:markdown_source]}").read
+- else
+	- slideshow_source = File.open(current_page.source_file).read
+
+- # Attach twitter name to each slide.
+- # Defaults to default_twitter_name (above) unless twitter_name is set.
+- # Defaults to not showing a slide on the first slide unless twitter_name_start is set (1 indexed).
+- default_twitter_name = data.config.default_twitter.name
+- default_twitter_name_start = data.config.default_twitter.start
+- attach_twitter_name = slide_configuration_data['twitter']
+- slideshow_css_file = slide_configuration_data.has_key?(:css) ? slide_configuration_data[:css] : 'slides'
+
+- # Test for Charts.js support
+- # To load chart support, you also need to have a javascript file in source/javascripts/XX/YY.js where XX and YY matches the file path of your remark presentation (so source/remark/XX/YY.html is how you get the values).
+- # This javascript file needs to have one function, called "load_charts()."
+- # This function will contain all the initialization calls to Charts.js.
+- if slideshow_source =~ /\<canvas/
+	- chart_type = "Charts.js"
+	- load_charts = true
+- elsif slideshow_source =~ /\<svg/
+	- chart_type = "nv.d3.js"
+	- load_charts = true
+- if load_charts
+	- chart_file_js = sitemap.resources.select{|a| (a.destination_path.match current_resource.destination_path.gsub(/\.html/,".js"))}[0]
+	- if !chart_file_js.nil?
+		- chart_file_js = chart_file_js.destination_path.gsub(/javascripts\//,"")
+	- else
+		- load_charts = false
+	
+
+- # Test for progress_bar support. Can be added by setting progress_bar to true in the slide metadata.
+- attach_progress_bar = slide_configuration_data['progress_bar']
+!!! 5
+%html
+	%head
+		%meta{ :charset => "utf-8" }/
+		%base( target="_blank" )
+		%title
+			- if slide_configuration_data['title']
+				= slide_configuration_data['title']
+		= stylesheet_link_tag("remark/fonts/icomoon/icomoon.css", :media => "all", :rel => "stylesheet" )
+		= stylesheet_link_tag("remark/#{slideshow_css_file}.css", :media => "all", :rel => "stylesheet" )
+		- slideshow_specific_css = sitemap.resources.select{|a| (a.destination_path.match current_resource.destination_path.gsub(/\.html/,".css"))}[0]
+		- if !slideshow_specific_css.nil?
+			= stylesheet_link_tag(slideshow_specific_css.destination_path.gsub(/stylesheets\//,""), :media => "all", :rel => "stylesheet" )
+		= javascript_include_tag("lib/head.min.js")
+
+		- # Assemble the call to head.js (ie. establish which libraries need loading)
+		- # We generate the call to the function, as well as any intialization code to run
+		- # after head.load() has run.
+		- head_js_array = []
+		- head_load_callbacks = []
+		- head_js_array.push(javascript_path("remark/remark.min.js"))
+		- #head_js_array.push('http://gnab.github.com/remark/downloads/remark-0.6.5.min.js')
+		- head_js_array.push(javascript_path("remark/add-ons/haml.language.js"))
+		- head_js_array.push(javascript_path("remark/add-ons/remark.language.js"))
+		- head_js_array.push(javascript_path("lib/zepto.min.js"))
+		- if load_charts and chart_type == "Charts.js"
+			- head_js_array.push(javascript_path("lib/zepto.min.js"))
+			- head_js_array.push(javascript_path("lib/Charts.js"))
+			- head_js_array.push(javascript_path(chart_file_js))
+		- elsif load_charts and chart_type == "nv.d3.js"
+			- head_js_array.push(javascript_path("lib/nvd3/d3.min.js"))
+			- head_js_array.push(javascript_path("lib/nvd3/nv.d3.min.js"))
+			- head_js_array.push(asset_path(:css, "nvd3/nv.d3.css"))
+			- head_js_array.push(javascript_path(chart_file_js))
+		- if load_charts
+			- head_load_callbacks.push("load_charts();")
+		- if attach_progress_bar
+			- head_js_array.push(javascript_path("lib/zepto.min.js"))
+			- head_js_array.push(javascript_path("remark/add-ons/progress-bar.js"))
+			- head_js_array.push(asset_path(:css, "remark/add-ons/progress-bar.css"))
+			- head_load_callbacks.push "attach_progress_bar(slideshow);"
+		- if attach_twitter_name
+			- twitter_name = if slide_configuration_data['twitter_name'] then slide_configuration_data['twitter_name'] else default_twitter_name end
+			- if twitter_name.split(/,\s+/).length > 1
+				- twitter_name = twitter_name.split(/,\s+/)
+			- twitter_name_start = if slide_configuration_data['twitter_name_start'] then (slide_configuration_data['twitter_name_start'] - 1) else (default_twitter_name_start - 1) end
+			
+			- head_js_array.push(javascript_path("lib/zepto.min.js"))
+			- head_load_callbacks.push "var twitter_name = \"#{twitter_name.kind_of?(Array) ? '<span class=\"twitter_badge\">@' + twitter_name.join('</span> <span class=\"twitter_badge\">@') + '</span>' : '<span class=\"twitter_badge\">@' + twitter_name + '</span>'}\";"
+			- head_load_callbacks.push "$('.remark-slide-content').slice(#{twitter_name_start}).each(function(i,slide){"
+			- head_load_callbacks.push "\t$(slide).append('<div class=\"twitter_name\">' + twitter_name +  '</div>');"
+			- head_load_callbacks.push "});"
+		- def variable_name(path)
+			- File.basename(path).gsub(".min", "").gsub(/\W/, "_")
+		- head_js_array.uniq!
+		- head_js_call = head_js_array.map { |x| variable_name(x)}.join(", ")
+		:javascript
+			// The javascript files to be loaded are determined by Middleman at compile:
+			var #{
+				head_js_array.map { |x| "#{variable_name(x)} = \"#{x}\""}.join(",\n\t  ")
+			};
+				
+			// This call to head.js is automatically determined by Middleman at compile:
+			head.load(#{head_js_call}, function(){
+			
+				// Ugly fix of HAML's formatting problems:
+				document.getElementById("source").innerHTML = document.getElementById("source").innerHTML.replace(/^\s{4}/gm,"");
+				
+				// Load the slideshow:
+				var slideshow = remark.create({
+					navigation: {
+						scroll: false,
+						touch: true
+					}
+				});
+				/*var image_scalar = {width: 0.85, height: 0.75 };
+				$(window).on('resize', function() {
+					$('img').css('max-width', parseInt($('.remark-slide-scaler').css('width')) * image_scalar['width'] + 'px');
+					$('img').css('max-height', parseInt($('.remark-slide-scaler').css('height')) * image_scalar['height'] + 'px');
+				}).resize();*/
+				#{if head_load_callbacks.length > 0 then "\n\t// Load any add-ons:" end}
+				#{
+					head_load_callbacks.join("\n  ")
+				}
+			});
+	%body
+		%textarea{ :id => "source"}
+			= yield

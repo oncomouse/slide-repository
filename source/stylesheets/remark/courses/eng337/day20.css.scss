@@ -1,0 +1,23 @@
+.smaller {
+	font-size: 0.85em;
+
+	p {
+		margin-top: 1em;
+	}
+
+	.topic {
+		font-size: (1.5em / 0.85);
+	}
+}
+
+.small {
+	font-size: 0.95em;
+
+	p {
+		margin-top: 1em;
+	}
+
+	.topic {
+		font-size: (1.5em / 0.85);
+	}
+}

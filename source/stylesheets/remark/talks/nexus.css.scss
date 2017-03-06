@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
+
+html {
+	font-family: "Lato", "Helvetica", sans-serif;
+	font-weight: 300;
+	strong, b {
+		font-weight: 400;
+		color: black;
+	}
+}
+
+p, ul li, ol li, h4 {
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", "Helvetica", sans-serif;
+	font-weight: 400;
+	line-height: 1;
+}
+
+h4 {
+	font-weight: 300;
+}
+
+.single-space {
+	margin-top: 1rem;
+	& > * {
+		margin-top: 0;
+	}
+}
+
+.nexus-title {
+	h1 {
+		line-height: 1.15;
+	}
+}
+
+.phantom {
+	color: white !important;
+}
+
+.big {
+	p, ul li, ol li, td, th {
+		font-size: 1.43rem;
+		line-height: 2rem;
+	}
+}
+
+.bigger{
+	p, ul li, ol li {
+		font-size: 2.15rem;
+		line-height: 1.35;
+	}
+}
+
+.center {
+	ol, ul {
+		list-style: none;
+	}
+}
+
+.nexus-title, .intertitle {
+	h1 {
+		font-size: 4rem;
+	}
+}
+
+table {
+	width: 75%;
+}
+
+.center {
+	table {
+		margin: auto;
+	}
+}
+
+.remark-slide-content {
+	& > .title-block {
+		margin-top: 0;
+	}
+}
+
+pre {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}

@@ -1,0 +1,22 @@
+.small {
+	p,li {
+		font: {
+			size: 0.9em;
+		};
+	}
+	p {
+		margin-top: 1.25em;
+	}
+	
+}
+
+.smaller {
+	p,li {
+		font: {
+			size: 0.75em;
+		};
+	}
+	p {
+		margin-top: 1.25em;
+	}
+}

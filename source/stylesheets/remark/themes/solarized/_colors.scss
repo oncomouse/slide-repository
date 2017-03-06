@@ -1,0 +1,88 @@
+@import "palette";
+
+$base_font_color: $base01;
+$base_background_color: $base3;
+$base_shadow_color: $base00;
+$base_light_font_color: $base0;
+$base_highlight_font_color: $base00;
+$base_highlight_background_color: $base2;
+
+$inverse_font_color: $base1;
+$inverse_background_color: $base03;
+$inverse_shadow_color: $base0;
+$inverse_highlight_font_color: $base0;
+$inverse_highlight_background_color: $base02;
+
+$emphasis_color: $orange;
+$progress_color: $red;
+$link_color: $magenta;
+$left_column_current_color: $magenta;
+
+body {
+	color: $base_font_color;
+}
+
+.remark-slide {
+	background: {
+		color: $base_background_color;
+	};
+}
+
+/* light is default mode, so pair with general html definition */
+html, .light {
+	@include rebase($base3, $base2, $base1, $base0, $base00, $base01, $base02, $base03);
+}
+
+.dark {
+	@include rebase($base03, $base02, $base01, $base00, $base0, $base1, $base2, $base3);
+}
+
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+.emph {
+	color: $emphasis_color;
+}
+
+a, a > code {
+	color: $link_color;
+}
+
+.inverse {
+	@include rebase($base03, $base02, $base01, $base00, $base0, $base1, $base2, $base3);
+
+	h1, h2 {
+		text-shadow: 1px 1px 2px rgba($inverse_shadow_color, 0.2);
+	}
+}
+
+.left-column {
+	color: $base_light_font_color;
+
+	h1, h2, h3 {
+		color: $base_light_font_color;
+	}
+
+	.current {
+		color: $left_column_current_color;
+	}
+}
+
+// Progress Bar Color
+#remark-progress {
+	background: {
+		color: $progress_color;
+	};
+}
+
+.remark-slideshow {
+	background: $base_background_color;
+}
+
+// Fix Solarized highlighting
+.hljs-solarized_light:not(.inverse) pre, pre code {
+	background: $base_highlight_background_color !important;
+	color: $base_highlight_font_color;
+}

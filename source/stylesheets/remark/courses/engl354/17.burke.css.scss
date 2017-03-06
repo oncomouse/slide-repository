@@ -1,0 +1,86 @@
+$top_modifier: 50px;
+
+#pentad1 {
+	position: absolute;
+	width: 365px;
+	top: 251px + $top_modifier;
+	margin: 0;
+	left: 251px;
+}
+#pentad2 {
+	width: 365px;
+	position: absolute;
+	transform: rotate(-72deg);
+	top: 294px + $top_modifier;
+	margin: 0;
+	left: 195px;
+}
+#pentad3 {
+	width: 365px;
+	position: absolute;
+	transform: rotate(72deg);
+	top: 294px + $top_modifier;
+	margin: 0;
+	left: 308px;
+}
+#pentad4 {
+	width: 365px;
+	margin: 0;
+	position: absolute;
+	top: 359px + $top_modifier;
+	transform: rotate(36deg);
+	left: 217px;
+}
+#pentad5 {
+	width: 365px;
+	margin: 0;
+	position: absolute;
+	top: 359px + $top_modifier;
+	transform: rotate(-36deg);
+	left: 286px;
+}
+
+#agent {
+	position: absolute;
+	top: 86px + $top_modifier;
+	left: 396px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+#act {
+	position: absolute;
+	top: 231px + $top_modifier;
+	left: 206px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+#agency {
+	position: absolute;
+	top: 450px + $top_modifier;
+	left: 215px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+#purpose {
+	position: absolute;
+	top: 231px + $top_modifier;
+	left: 619px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+#scene {
+	position: absolute;
+	top: 455px + $top_modifier;
+	left: 588px;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+#ratio {
+	position: absolute;
+	text-align: center;
+	top	: 311px + $top_modifier;
+	left: 251px;
+	width: 365px;
+	font-size: 1.25rem;
+}

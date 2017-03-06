@@ -1,0 +1,21 @@
+@import "bourbon";
+
+$red: #ff0033;
+$black: #000;
+$grey: #888;
+$white: #fff;
+
+body {
+	color: $white;
+	background: $black;
+}
+
+.inverse {
+	h1 small, h2 {
+		color: $grey;
+	}
+}
+
+.remark-slide-content {
+	background: rgba($black, 0.4);
+}

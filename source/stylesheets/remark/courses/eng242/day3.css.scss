@@ -1,0 +1,33 @@
+.new-england-authors {
+	ul li, ol li, p {
+		font: {
+			size: 2.5rem;
+		};
+		line: {
+			height: 3.5rem;
+		};
+	}
+
+	.topic {
+		font-size: (1.5em / 2.5);
+		line-height: 1.25rem;
+	}
+
+	.remark-slide-number {
+		line-height: 1.33em;
+	}
+}
+
+.small {
+	font-size: 0.85rem;
+}
+
+.activity {
+	.pull-left {
+		width: 17%;
+	}
+
+	.pull-right {
+		width: 77%;
+	}
+}

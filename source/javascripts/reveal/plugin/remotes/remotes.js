@@ -1,0 +1,1 @@
+//= require reveal.js/plugin/remotes/remotes

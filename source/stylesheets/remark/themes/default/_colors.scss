@@ -1,0 +1,79 @@
+@import "libraries/sass-colors";
+
+$base_font_color: black;
+$base_background_color: white;
+$base_shadow_color: #777;
+$base_light_font_color: lighten(black, 5%);
+$base_highlight_font_color: #777;
+$base_highlight_background_color: lighten(black, 5%);
+
+$inverse_font_color: invert($base_font_color);
+$inverse_background_color: invert($base_background_color);
+$inverse_shadow_color: invert($base_shadow_color);
+$inverse_highlight_font_color: invert($base_highlight_font_color);
+$inverse_highlight_background_color: invert($base_highlight_background_color);
+
+$emphasis_color: $resolution_blue;
+$progress_color: $resolution_blue;
+$link_color: $resolution_blue;
+$left_column_current_color: $base_light_font_color;
+
+$title_color: $black;
+$subtitle_color: $black;
+
+body {
+	color: $base_font_color;
+}
+
+.remark-slide {
+	background: {
+		color: $base_background_color;
+	};
+}
+
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+.emph, strong {
+	color: $emphasis_color;
+}
+
+a, a > code {
+	color: $link_color;
+}
+
+.inverse {
+	background: $inverse_background_color;
+	color: $inverse_font_color;
+
+	h1, h2 {
+		text-shadow: 1px 1px 2px rgba($inverse_shadow_color, 0.2);
+	}
+}
+
+.left-column {
+	color: $base_light_font_color;
+
+	h1, h2, h3 {
+		color: $base_light_font_color;
+	}
+
+	.current {
+		color: $left_column_current_color;
+	}
+}
+
+// Progress Bar Color
+#remark-progress-content {
+	background: {
+		color: $progress_color;
+	};
+}
+
+// Fix Solarized highlighting
+.hljs-solarized_light:not(.inverse) pre, .hljs-solarized_light:not(.inverse) pre code {
+	background: $base_highlight_background_color !important;
+	color: $base_highlight_font_color;
+}

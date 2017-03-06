@@ -1,0 +1,77 @@
+@import url(https://code.cdn.mozilla.net/fonts/fira.css);
+
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+.remark-container {
+	background: $base2;
+}
+.remark-slide-scaler {
+	box-shadow: 0 0 30px darken($base2, 25%);
+}
+
+.small {
+	blockquote {
+		
+
+		p {
+			font-size: 0.8em !important;
+			line-height: 1.25;
+		}
+	}
+}
+
+.bigger {
+	.remark-slide-number {
+		bottom: 13px;
+	}
+}
+
+.lofi {
+	background: $base03;
+	color: $base3;
+	*{
+		font-family: "Fira Mono" !important;
+	}
+	p, li {
+		font-size: 19px;
+		line-height: 1.25;
+	}
+	em {
+		font-style: normal;
+		color: $cyan;
+	}
+	&.big {
+		p, li {
+			font-size: 1.25rem;
+			line-height: 1.35;
+		}
+	}
+	strong {
+		color: inherit;
+	}
+	h1,h2 {
+		color: $blue;
+	}
+	pre{
+		font-family: "Courier New", Courier, mono;
+		font-size: 16px;
+	}
+	span.lo-fi{
+		color: $cyan;
+	}
+}

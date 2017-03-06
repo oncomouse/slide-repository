@@ -1,0 +1,18 @@
+@import "compass/css3/background-size";
+@import "colors";
+@import "fonts";
+
+.remark-slideshow {
+	background: url(../images/ks/background.jpg) #fff;
+
+	@include background-size(cover);
+}
+
+.remark-slide {
+	background: none;
+
+	.remark-slide-content {
+		padding: 0;
+		margin: 1em 4em 1em 4em;
+	}
+}
