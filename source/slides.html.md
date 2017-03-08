@@ -11,7 +11,6 @@ class: center, middle, inverse
 # Title
 
 ---
-class: animated slideInLeft
 .left-column[
   ## .current[Item 1]
   ## Item 2
