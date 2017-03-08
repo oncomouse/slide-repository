@@ -14,9 +14,9 @@ $inverse_highlight_font_color: invert($base_highlight_font_color);
 $inverse_highlight_background_color: invert($base_highlight_background_color);
 
 $emphasis_color: $resolution_blue;
-$progress_color: $resolution_blue;
-$link_color: $resolution_blue;
-$left_column_current_color: $base_light_font_color;
+$progress_color: $emphasis_color;
+$link_color: $emphasis_color;
+$left_column_current_color: $emphasis_color;
 
 $title_color: $black;
 $subtitle_color: $black;
