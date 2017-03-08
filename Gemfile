@@ -24,4 +24,6 @@ source 'https://rails-assets.org' do
     gem "rails-assets-zepto", "~>1.1.4"
     gem "rails-assets-bourbon", ">=4.2.7"
     gem "rails-assets-neat", "2.0.0"
+	gem "rails-assets-icomoon"
+	gem "rails-assets-webfont-opensans"
 end
