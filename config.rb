@@ -53,25 +53,29 @@ ready do
 end
 
 activate :sprockets
-after_configuration do
-	@bower_config = {"directory" => "bower_components"}
-	sprockets.append_path File.join "#{root}", @bower_config["directory"]
-	sprockets.append_path File.join "#{root}", @bower_config["directory"], "bourbon", "app", "assets", "stylesheets"
-	sprockets.append_path File.join "#{root}", @bower_config["directory"], "neat", "core"
-	compass_config do |config|
-			config.add_import_path File.join "#{root}", @bower_config["directory"]
-	end
+if defined? RailsAssets
+  RailsAssets.load_paths.each do |path|
+    sprockets.append_path path
+  end
 end
 
-parse_files = Dir.entries("#{Dir.pwd}/source/")
-
-# Oh boy, recursion!
+# We have to parse through the source directory for two things:
+#  - Markdown slide files
+#  - Directories
+#
+# We have to proxy both kinds of files for specific reasons related
+# to building the repository.
+#
+parse_files = Dir.entries(File.join(root, "source"))
 while parse_files.length > 0
     file = parse_files.shift
     next if file =~ /^\./
     next if file =~ /remark_base/
     
-    if file =~ /(\.markdown|\.md)$/# or File.extname(file) == ".md"
+	# If the file is a Markdown slide source, we proxy it to remark_markdown_template.html.haml
+	# This file will actually set up all the JavaScript and page layout things for
+	# the Markdown file, while loading the source as a Textarea, as Remark.js likes.
+    if file =~ /(\.markdown|\.md)$/
         markdown_source = File.open("#{Dir.pwd}/source/#{file}").read
         if markdown_source =~ /^---/
             yaml_options = YAML.load markdown_source.split(/---/)[1]
@@ -81,6 +85,8 @@ while parse_files.length > 0
         proxy "#{file.sub(File.extname(file), "")}", "remark_markdown_template.html", :locals => {:markdown_source => file, :yaml_options => yaml_options}
     end 
     
+	# If the file is a directory, we proxy a directory index to /index.html.erb,
+	# which will build the index display for the various slide files we are generating.
 	if File.directory? "#{Dir.pwd}/source/#{file}" and !(file =~ /(javascripts|stylesheets|images|fonts|layouts)/) and !(file =~ /^\./)
         proxy "#{file}/index.html", "index.html", :locals => {:directory => file}
         
