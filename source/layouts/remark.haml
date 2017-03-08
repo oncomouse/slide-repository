@@ -57,7 +57,7 @@
 		= stylesheet_link_tag("remark/fonts/icomoon/icomoon.css", :media => "all", :rel => "stylesheet" )
 		= stylesheet_link_tag("remark/#{slideshow_css_file}.css", :media => "all", :rel => "stylesheet" )
 		- slideshow_specific_css = sitemap.resources.select{|a| (a.destination_path.match current_resource.destination_path.gsub(/\.html/,".css"))}[0]
-		- if !slideshow_specific_css.nil?
+		- if !slideshow_specific_css.nil? and File.basename(slideshow_specific_css.destination_path) != "slides.css"
 			= stylesheet_link_tag(slideshow_specific_css.destination_path.gsub(/stylesheets\//,""), :media => "all", :rel => "stylesheet" )
 		= javascript_include_tag("lib/head.min.js")
 
