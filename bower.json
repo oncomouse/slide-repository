@@ -28,10 +28,8 @@
     "html5shiv": "~3.7.2",
     "nvd3": "~1.1.15-beta",
     "remark": "^0.13.0",
-    "reveal.js": "~2.6.2",
     "zepto": "~1.1.4",
     "bourbon": "^4.2.7",
-    "neat": "2.0.0",
-    "compass-mixins": "^1.0.2"
+    "neat": "2.0.0"
   }
 }
