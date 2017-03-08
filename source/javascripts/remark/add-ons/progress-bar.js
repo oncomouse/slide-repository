@@ -1,6 +1,4 @@
 function attach_progress_bar(slideshow) {
-	console.log(slideshow);
-	
 	var showSlideListener = function(current_slide){
 		if(current_slide === undefined) {
 			current_slide = slideshow.getSlides()[slideshow.getCurrentSlideIndex()];
