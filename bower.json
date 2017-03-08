@@ -23,7 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "classlist": "~2014.7.23",
     "headjs": "~1.0.3",
     "html5shiv": "~3.7.2",
     "nvd3": "~1.1.15-beta",
