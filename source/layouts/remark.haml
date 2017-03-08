@@ -54,8 +54,8 @@
 		%title
 			- if slide_configuration_data['title']
 				= slide_configuration_data['title']
-		= stylesheet_link_tag("remark/fonts/icomoon/icomoon.css", :media => "all", :rel => "stylesheet" )
-		= stylesheet_link_tag("remark/#{slideshow_css_file}.css", :media => "all", :rel => "stylesheet" )
+		= stylesheet_link_tag("fonts/icomoon/icomoon.css", :media => "all", :rel => "stylesheet" )
+		= stylesheet_link_tag("#{slideshow_css_file}.css", :media => "all", :rel => "stylesheet" )
 		- slideshow_specific_css = sitemap.resources.select{|a| (a.destination_path.match current_resource.destination_path.gsub(/\.html/,".css"))}[0]
 		- if !slideshow_specific_css.nil? and File.basename(slideshow_specific_css.destination_path) != "slides.css"
 			= stylesheet_link_tag(slideshow_specific_css.destination_path.gsub(/stylesheets\//,""), :media => "all", :rel => "stylesheet" )
@@ -85,7 +85,7 @@
 		- if attach_progress_bar
 			- head_js_array.push(javascript_path("lib/zepto.min.js"))
 			- head_js_array.push(javascript_path("remark/add-ons/progress-bar.js"))
-			- head_js_array.push(asset_path(:css, "remark/add-ons/progress-bar.css"))
+			- head_js_array.push(asset_path(:css, "add-ons/progress-bar.css"))
 			- head_load_callbacks.push "attach_progress_bar(slideshow);"
 		- if attach_twitter_name
 			- twitter_name = if slide_configuration_data['twitter_name'] then slide_configuration_data['twitter_name'] else default_twitter_name end
