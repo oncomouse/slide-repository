@@ -245,8 +245,8 @@ img {
 	color: $inverse_background_color !important;
 }
 // Set the font size for paragraphs and bullets on a given slide.
-// Set class: f18px to f70px for the slide class for precise font sizing:
-@for $i from 18 through 70 {
+// Set class: f18px to f150px for the slide class for precise font sizing:
+@for $i from 18 through150 {
 	.f#{$i}px {
 		p, li {
 			font-size: $i * 1px;
