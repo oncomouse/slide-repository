@@ -5,12 +5,15 @@
 - #
 - # Additionally, if the file is a .html.haml file, we just it's native metadata and don't
 - # worry about any of this.
-- if defined? yaml_options and yaml_options.is_a? Hash and yaml_options.length > 0
-	- slide_configuration_data = yaml_options
+- if locals and locals.has_key? :markdown_source 
+	- slideshow_source = File.open(Dir.pwd + "/source/#{locals[:markdown_source]}").read
+	- if slideshow_source =~ /^---/
+		- slide_configuration_data = YAML.load slideshow_source.split(/---/)[1]
+	- else
+		- slide_configuration_data = yaml_options
 - else
+	- slideshow_source = File.open(current_page.source_file).read
 	- slide_configuration_data = current_resource.data
-
-- # This is all of our switches to control the display:
 
 - # Load the slideshow source:
 - if locals and locals.has_key? :markdown_source
