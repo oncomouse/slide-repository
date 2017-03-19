@@ -1,3 +1,4 @@
+// Default Font:
 $base-font-size: 16px !default;
 $body-font: $helvetica !default;
 $body-font-weight: 400 !default;
@@ -5,8 +6,15 @@ $body-font-strong-weight: 700 !default;
 $header-font: $helvetica !default;
 $header-font-weight: 700 !default;
 $header-font-soft-weight: 600 !default;
+// Default Color:
+$base_font_color: black !default;
+$base_background_color: white !default;
+$inverse_background_color: invert($base_background_color) !default;
 $title_color: $base_font_color !default;
 $subtitle_color: $base_font_color !default;
+$emphasis_color: red !default;
+$progress_color: $progress_color !default;
+$left_column_current_color: $emphasis_color !default;
 
 // ===================================================================
 //
@@ -54,6 +62,30 @@ code {
 img {
 	max-width: 100%;
 	max-height: 565px;
+}
+.left-column {
+	color: $base_light_font_color;
+
+	h1, h2, h3 {
+		color: $base_light_font_color;
+	}
+
+	.current {
+		color: $left_column_current_color;
+	}
+}
+.remark-slideshow {
+	background: $base_background_color;
+}
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+.emph {
+	color: $emphasis_color;
+}
+a, a > code {
+	color: $link_color;
 }
 // ===================================================================
 //
@@ -282,6 +314,11 @@ img {
 }
 .inverse .phantom {
 	color: $inverse_background_color !important;
+}
+#remark-progress-content {
+	background: {
+		color: $progress_color;
+	};
 }
 // Set the font size for paragraphs and bullets on a given slide.
 // Set class: f18px to f150px for the slide class for precise font sizing:
