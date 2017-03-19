@@ -1,8 +1,5 @@
 /*	Display a line whose width indicates remaining slides
  * instead of the usual X/Y count. */
-
-@import "bourbon";
-
 #remark-progress {
 	height: 4px;
 	min-width: 0;
