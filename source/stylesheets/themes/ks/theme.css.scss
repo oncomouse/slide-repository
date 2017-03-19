@@ -1,11 +1,11 @@
-@import "../typebase";
+@import "../../typebase";
 @import "bourbon";
 @import "neat";
 @import "compass/css3/background-size";
 @import "colors";
 @import "fonts";
 .remark-slideshow {
-	background: url(../images/ks/background.jpg) #fff;
+	background: url(../../images/ks/background.jpg) #fff;
 	@include background-size(cover);
 }
 .remark-slide {
@@ -16,4 +16,4 @@
 		margin: 1em 4em 1em 4em;
 	}
 }
-@import "../remark-utilities";
+@import "../../remark-utilities";

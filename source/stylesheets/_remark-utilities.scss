@@ -1,6 +1,45 @@
+$base-font-size: 16px !default;
+$body-font: $helvetica !default;
+$body-font-weight: 400 !default;
+$body-font-strong-weight: 700 !default;
+$header-font: $helvetica !default;
+$header-font-weight: 700 !default;
+$header-font-soft-weight: 600 !default;
+$title_color: $base_font_color !default;
+$subtitle_color: $base_font_color !default;
+
 // ===================================================================
 //
 // Basic formatting
+@media all and (max-width: 30em) {
+	body {
+		font: {
+			size: $base-font-size !important;
+		};
+	}
+}
+html {
+	font: {
+		family: $body-font;
+		weight: $body-font-weight;
+	}
+	strong {
+		font: {
+			weight: $body-font-strong-weight;
+		}
+	}
+}
+h1, h2, h3, h4, h5 {
+	font: {
+		family: $header-font;
+		weight: $header-font-weight;
+	}
+	.soft {
+		font: {
+			weight: $header-font-soft-weight;
+		};
+	}
+}
 hr {
 	width: 80%;
 	border: 0;
@@ -246,7 +285,7 @@ img {
 }
 // Set the font size for paragraphs and bullets on a given slide.
 // Set class: f18px to f150px for the slide class for precise font sizing:
-@for $i from 18 through150 {
+@for $i from 18 through 150 {
 	.f#{$i}px {
 		p, li {
 			font-size: $i * 1px;

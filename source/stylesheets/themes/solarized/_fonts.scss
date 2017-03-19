@@ -1,19 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-
-body {
-	font: {
-		family: "Droid Serif";
-		size: 20px;
-	};
-}
-
-h1, h2, h3 {
-	font: {
-		family: "Yanone Kaffeesatz";
-	};
-	font: {
-		weight: 400;
-	};
-}
+$base-font-size: 20px;
+$body-font: "Droid Serif", $helvetica;
+$body-font-weight: 400;
+$body-font-strong-weight: 700;
+$header-font: "Yanone Kaffeesatz";
+$header-font-weight: 400;
+$header-font-soft-weight: 400;
