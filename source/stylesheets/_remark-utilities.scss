@@ -63,6 +63,33 @@ img {
 	max-width: 100%;
 	max-height: 565px;
 }
+
+body {
+	color: $base_font_color;
+}
+
+.remark-slide {
+	background: {
+		color: $base_background_color;
+	};
+}
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+.emph, strong {
+	color: $emphasis_color;
+}
+a, a > code {
+	color: $link_color;
+}
+.inverse {
+	background: $inverse_background_color;
+	color: $inverse_font_color;
+	h1, h2 {
+		text-shadow: 1px 1px 2px rgba($inverse_shadow_color, 0.2);
+	}
+}
 .left-column {
 	color: $base_light_font_color;
 
@@ -74,18 +101,11 @@ img {
 		color: $left_column_current_color;
 	}
 }
-.remark-slideshow {
-	background: $base_background_color;
-}
-html * {
-	color-profile: sRGB;
-	rendering-intent: auto;
-}
-.emph {
-	color: $emphasis_color;
-}
-a, a > code {
-	color: $link_color;
+// Progress Bar Color
+#remark-progress-content {
+	background: {
+		color: $progress_color;
+	};
 }
 // ===================================================================
 //
