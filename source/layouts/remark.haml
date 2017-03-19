@@ -24,7 +24,8 @@
 - default_twitter_name = data.config.default_twitter.name
 - default_twitter_name_start = data.config.default_twitter.start
 - attach_twitter_name = slide_configuration_data["twitter"]
-- slideshow_css_file = slide_configuration_data.has_key?("css") ? slide_configuration_data["css"] : "slides"
+- slideshow_css_file = slide_configuration_data.has_key?("css") ? slide_configuration_data["css"] : "default/theme"
+- slideshow_css_file = "#{slide_configuration_data["theme"]}/theme" if slide_configuration_data.has_key?("theme")
 
 - # Test for Charts.js support
 - # To load chart support, you also need to have a javascript file in source/javascripts/XX/YY.js where XX and YY matches the file path of your remark presentation (so source/remark/XX/YY.html is how you get the values).
