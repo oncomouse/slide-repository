@@ -7,14 +7,14 @@ $header-font: $helvetica !default;
 $header-font-weight: 700 !default;
 $header-font-soft-weight: 600 !default;
 // Default Color:
-$base_font_color: black !default;
-$base_background_color: white !default;
-$inverse_background_color: invert($base_background_color) !default;
-$title_color: $base_font_color !default;
-$subtitle_color: $base_font_color !default;
-$emphasis_color: red !default;
-$progress_color: $progress_color !default;
-$left_column_current_color: $emphasis_color !default;
+$base-font-color: black !default;
+$base-background-color: white !default;
+$inverse-background-color: invert($base-background-color) !default;
+$title-color: $base-font-color !default;
+$subtitle-color: $base-font-color !default;
+$emphasis-color: red !default;
+$progress-color: $progress-color !default;
+$left-column-current-color: $emphasis-color !default;
 
 // ===================================================================
 //
@@ -65,12 +65,12 @@ img {
 }
 
 body {
-	color: $base_font_color;
+	color: $base-font-color;
 }
 
 .remark-slide {
 	background: {
-		color: $base_background_color;
+		color: $base-background-color;
 	};
 }
 html * {
@@ -78,33 +78,33 @@ html * {
 	rendering-intent: auto;
 }
 .emph, strong {
-	color: $emphasis_color;
+	color: $emphasis-color;
 }
 a, a > code {
-	color: $link_color;
+	color: $link-color;
 }
 .inverse {
-	background: $inverse_background_color;
-	color: $inverse_font_color;
+	background: $inverse-background-color;
+	color: $inverse-font-color;
 	h1, h2 {
-		text-shadow: 1px 1px 2px rgba($inverse_shadow_color, 0.2);
+		text-shadow: 1px 1px 2px rgba($inverse-shadow-color, 0.2);
 	}
 }
 .left-column {
-	color: $base_light_font_color;
+	color: $base-light-font-color;
 
 	h1, h2, h3 {
-		color: $base_light_font_color;
+		color: $base-light-font-color;
 	}
 
 	.current {
-		color: $left_column_current_color;
+		color: $left-column-current-color;
 	}
 }
 // Progress Bar Color
 #remark-progress-content {
 	background: {
-		color: $progress_color;
+		color: $progress-color;
 	};
 }
 // ===================================================================
@@ -261,7 +261,7 @@ a, a > code {
 	position: absolute;
 	bottom: 14px;
 	right: 10%;
-	color: $emphasis_color;
+	color: $emphasis-color;
 }
 // Class to bunch titles together:
 .title-block {
@@ -275,10 +275,10 @@ a, a > code {
 .title {
 	h1 {
 		font-size: 2.4em;
-		color: $title_color;
+		color: $title-color;
 		.subtitle {
 			font-size: (2em / 2.4);
-			color: $subtitle_color;
+			color: $subtitle-color;
 		}
 	}
 	h2 {
@@ -319,7 +319,7 @@ a, a > code {
 		display: inline-block;
 		width: 1in;
 		height: 1px;
-		background: $base_font_color;
+		background: $base-font-color;
 		margin: {
 			bottom: 0.5em;
 		}
@@ -327,17 +327,17 @@ a, a > code {
 }
 // Put in text/image but make it invisible:
 .phantom {
-	color: $base_background_color !important;
+	color: $base-background-color !important;
 	img, img.phantom {
 		opacity: 0;
 	}
 }
 .inverse .phantom {
-	color: $inverse_background_color !important;
+	color: $inverse-background-color !important;
 }
 #remark-progress-content {
 	background: {
-		color: $progress_color;
+		color: $progress-color;
 	};
 }
 // Set the font size for paragraphs and bullets on a given slide.

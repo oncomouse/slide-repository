@@ -5,23 +5,23 @@ $black: #000;
 $grey: #888;
 $white: #fff;
 
-$base_font_color: $white;
-$base_background_color: rgba($black, 0.4);
-$base_shadow_color: $grey;
-$base_light_font_color: lighten($black, 5%);
-$base_highlight_font_color: $grey;
-$base_highlight_background_color: lighten($black, 5%);
+$base-font-color: $white;
+$base-background-color: rgba($black, 0.4);
+$base-shadow-color: $grey;
+$base-light-font-color: lighten($black, 5%);
+$base-highlight-font-color: $grey;
+$base-highlight-background-color: lighten($black, 5%);
 
-$inverse_font_color: invert($base_font_color);
-$inverse_background_color: invert($base_background_color);
-$inverse_shadow_color: invert($base_shadow_color);
-$inverse_highlight_font_color: invert($base_highlight_font_color);
-$inverse_highlight_background_color: invert($base_highlight_background_color);
+$inverse-font-color: invert($base-font-color);
+$inverse-background-color: invert($base-background-color);
+$inverse-shadow-color: invert($base-shadow-color);
+$inverse-highlight-font-color: invert($base-highlight-font-color);
+$inverse-highlight-background-color: invert($base-highlight-background-color);
 
-$emphasis_color: $red;
-$progress_color: $emphasis_color;
-$link_color: $emphasis_color;
-$left_column_current_color: $emphasis_color;
+$emphasis-color: $red;
+$progress-color: $emphasis-color;
+$link-color: $emphasis-color;
+$left-column-current-color: $emphasis-color;
 
-$title_color: $base_font_color;
-$subtitle_color: $base_font_color;
+$title-color: $base-font-color;
+$subtitle-color: $base-font-color;

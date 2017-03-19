@@ -1,22 +1,22 @@
 @import "palette";
 
-$base_font_color: $base01;
-$base_background_color: $base3;
-$base_shadow_color: $base00;
-$base_light_font_color: $base0;
-$base_highlight_font_color: $base00;
-$base_highlight_background_color: $base2;
+$base-font-color: $base01;
+$base-background-color: $base3;
+$base-shadow-color: $base00;
+$base-light-font-color: $base0;
+$base-highlight-font-color: $base00;
+$base-highlight-background-color: $base2;
 
-$inverse_font_color: $base1;
-$inverse_background_color: $base03;
-$inverse_shadow_color: $base0;
-$inverse_highlight_font_color: $base0;
-$inverse_highlight_background_color: $base02;
+$inverse-font-color: $base1;
+$inverse-background-color: $base03;
+$inverse-shadow-color: $base0;
+$inverse-highlight-font-color: $base0;
+$inverse-highlight-background-color: $base02;
 
-$emphasis_color: $orange;
-$progress_color: $red;
-$link_color: $magenta;
-$left_column_current_color: $magenta;
+$emphasis-color: $orange;
+$progress-color: $red;
+$link-color: $magenta;
+$left-column-current-color: $magenta;
 
 /* light is default mode, so pair with general html definition */
 html, .light {
@@ -25,11 +25,11 @@ html, .light {
 .inverse, .dark {
 	@include rebase($base03, $base02, $base01, $base00, $base0, $base1, $base2, $base3);
 	h1, h2 {
-		text-shadow: 1px 1px 2px rgba($inverse_shadow_color, 0.2);
+		text-shadow: 1px 1px 2px rgba($inverse-shadow-color, 0.2);
 	}
 }
 // Fix Solarized highlighting
-.hljs-solarized_light:not(.inverse) pre, pre code {
-	background: $base_highlight_background_color !important;
-	color: $base_highlight_font_color;
+.hljs-solarized-light:not(.inverse) pre, pre code {
+	background: $base-highlight-background-color !important;
+	color: $base-highlight-font-color;
 }
