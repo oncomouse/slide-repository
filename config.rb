@@ -80,12 +80,7 @@ while parse_files.length > 0
 	# the Markdown file, while loading the source as a Textarea, as Remark.js likes.
     if file =~ /(\.markdown|\.md)$/
         markdown_source = File.open("#{Dir.pwd}/source/#{file}").read
-        if markdown_source =~ /^---/
-            yaml_options = YAML.load markdown_source.split(/---/)[1]
-        else
-            yaml_options = {}
-        end
-        proxy "#{file.sub(File.extname(file), "")}", "remark_markdown_template.html", :locals => {:markdown_source => file, :yaml_options => yaml_options}
+        proxy "#{file.sub(File.extname(file), "")}", "remark_markdown_template.html", :locals => {:markdown_source => file}
     end 
     
 	# If the file is a directory, we proxy a directory index to /index.html.erb,
