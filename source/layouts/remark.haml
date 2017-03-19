@@ -23,8 +23,8 @@
 - # Defaults to not showing a slide on the first slide unless twitter_name_start is set (1 indexed).
 - default_twitter_name = data.config.default_twitter.name
 - default_twitter_name_start = data.config.default_twitter.start
-- attach_twitter_name = slide_configuration_data['twitter']
-- slideshow_css_file = slide_configuration_data.has_key?(:css) ? slide_configuration_data[:css] : 'slides'
+- attach_twitter_name = slide_configuration_data["twitter"]
+- slideshow_css_file = slide_configuration_data.has_key?("css") ? slide_configuration_data["css"] : "slides"
 
 - # Test for Charts.js support
 - # To load chart support, you also need to have a javascript file in source/javascripts/XX/YY.js where XX and YY matches the file path of your remark presentation (so source/remark/XX/YY.html is how you get the values).
@@ -45,15 +45,15 @@
 	
 
 - # Test for progress_bar support. Can be added by setting progress_bar to true in the slide metadata.
-- attach_progress_bar = slide_configuration_data['progress_bar']
+- attach_progress_bar = slide_configuration_data["progress_bar"]
 !!! 5
 %html
 	%head
 		%meta{ :charset => "utf-8" }/
 		%base( target="_blank" )
 		%title
-			- if slide_configuration_data['title']
-				= slide_configuration_data['title']
+			- if slide_configuration_data["title"]
+				= slide_configuration_data["title"]
 		= stylesheet_link_tag("fonts/icomoon/icomoon.css", :media => "all", :rel => "stylesheet" )
 		= stylesheet_link_tag("#{slideshow_css_file}.css", :media => "all", :rel => "stylesheet" )
 		- slideshow_specific_css = sitemap.resources.select{|a| (a.destination_path.match current_resource.destination_path.gsub(/\.html/,".css"))}[0]
@@ -88,10 +88,10 @@
 			- head_js_array.push(asset_path(:css, "add-ons/progress-bar.css"))
 			- head_load_callbacks.push "attach_progress_bar(slideshow);"
 		- if attach_twitter_name
-			- twitter_name = if slide_configuration_data['twitter_name'] then slide_configuration_data['twitter_name'] else default_twitter_name end
+			- twitter_name = if slide_configuration_data["twitter_name"] then slide_configuration_data["twitter_name"] else default_twitter_name end
 			- if twitter_name.split(/,\s+/).length > 1
 				- twitter_name = twitter_name.split(/,\s+/)
-			- twitter_name_start = if slide_configuration_data['twitter_name_start'] then (slide_configuration_data['twitter_name_start'] - 1) else (default_twitter_name_start - 1) end
+			- twitter_name_start = if slide_configuration_data["twitter_name_start"] then (slide_configuration_data["twitter_name_start"] - 1) else (default_twitter_name_start - 1) end
 			
 			- head_js_array.push(javascript_path("lib/zepto.min.js"))
 			- head_load_callbacks.push "var twitter_name = \"#{twitter_name.kind_of?(Array) ? '<span class=\"twitter_badge\">@' + twitter_name.join('</span> <span class=\"twitter_badge\">@') + '</span>' : '<span class=\"twitter_badge\">@' + twitter_name + '</span>'}\";"
@@ -123,8 +123,8 @@
 				});
 				/*var image_scalar = {width: 0.85, height: 0.75 };
 				$(window).on('resize', function() {
-					$('img').css('max-width', parseInt($('.remark-slide-scaler').css('width')) * image_scalar['width'] + 'px');
-					$('img').css('max-height', parseInt($('.remark-slide-scaler').css('height')) * image_scalar['height'] + 'px');
+					$('img').css('max-width', parseInt($('.remark-slide-scaler').css('width')) * image_scalar["width"] + 'px');
+					$('img').css('max-height', parseInt($('.remark-slide-scaler').css('height')) * image_scalar["height"] + 'px');
 				}).resize();*/
 				#{if head_load_callbacks.length > 0 then "\n\t// Load any add-ons:" end}
 				#{
