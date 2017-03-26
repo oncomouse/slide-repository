@@ -1,13 +1,13 @@
 // Typesetting variables. Edit these!
 
-$baseFontSize: 20;
-$baseLineHeight: 1.35;
+$baseFontSize: 20 !default;
+$baseLineHeight: 1.35 !default;
 $leading: $baseLineHeight * 1rem;
 $emLeading: $baseLineHeight * 1em;
-
+$scale: 1.25 !default;
 // Rate of growth for headings
 // I actually like this to be slightly smaller then the leading. Makes for tight headings.
-$scale: 1.25;
+
 
 /*! Typebase.less v0.1.0 | MIT License */
 
@@ -52,7 +52,9 @@ ul, ol {
 		margin-left: 1.5rem;
 	}
 }
-
+ol + ul, ul + ol {
+	margin-top: -1 * $leading;
+}
 blockquote {
 	line-height: $leading;
 	margin-top: $leading;
