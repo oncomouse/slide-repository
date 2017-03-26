@@ -335,16 +335,17 @@ a, a > code {
 .inverse .phantom {
 	color: $inverse-background-color !important;
 }
+// Set the color for the progress bar
 #remark-progress-content {
 	background: {
 		color: $progress-color;
 	};
 }
 // Set the font size for paragraphs and bullets on a given slide.
-// Set class: f18px to f150px for the slide class for precise font sizing:
-@for $i from 18 through 150 {
+// Set class: f5px to f150px for the slide class for precise font sizing:
+@for $i from 5 through 150 {
 	.f#{$i}px {
-		p, li {
+		p, li, td {
 			font-size: $i * 1px;
 			line-height: 1.4;
 		}
