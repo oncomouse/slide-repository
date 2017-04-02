@@ -355,4 +355,9 @@ a, a > code {
 		font-size: $i * 1px;
 		line-height: 1.4;
 	}
+	// Size emoji:
+	.f#{$i}px img.emoji {
+		height: $i *1px;
+		max-height: 72px;
+	}
 }
