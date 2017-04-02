@@ -1,3 +1,4 @@
+- require "emoji_data"
 - # First detect if we have options passed in by a proxy or not.
 - # In config.rb, any .html.markdown files are proxied to a template file. That template file
 - # is also passed the markdown files YAML metadata. We are detecting here if that metadata
@@ -40,7 +41,7 @@
 		- chart_file_js = chart_file_js.destination_path.gsub(/javascripts\//,"")
 	- else
 		- load_charts = false
-	
+- has_emoji = (EmojiData.scan(slideshow_source).length > 0)	
 
 - # Test for progress_bar support. Can be added by setting progress_bar to true in the slide metadata.
 - attach_progress_bar = slide_configuration_data["progress_bar"]
@@ -69,6 +70,9 @@
 		- head_js_array.push(javascript_path("remark/add-ons/haml.language.js"))
 		- head_js_array.push(javascript_path("remark/add-ons/remark.language.js"))
 		- head_js_array.push(javascript_path("lib/zepto.min.js"))
+		- if has_emoji
+			- head_js_array.push(javascript_path("lib/twemoji.js"))
+			- head_load_callbacks.push("twemoji.parse(document.body);")
 		- if load_charts and chart_type == "Charts.js"
 			- head_js_array.push(javascript_path("lib/zepto.min.js"))
 			- head_js_array.push(javascript_path("lib/Charts.js"))

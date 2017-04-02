@@ -15,6 +15,7 @@ gem "kramdown"
 gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
 gem "oj" if not RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
 gem "therubyracer", "=0.12.1" if not RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
+gem "emoji_data", github: 'oncomouse/emoji_data.rb', branch: 'master'
 
 source 'https://rails-assets.org' do
     gem "rails-assets-headjs", "~>1.0.3"
@@ -26,4 +27,5 @@ source 'https://rails-assets.org' do
     gem "rails-assets-neat", "2.0.0"
 	gem "rails-assets-icomoon"
 	gem "rails-assets-open-sans"
+	gem "rails-assets-twemoji"
 end
