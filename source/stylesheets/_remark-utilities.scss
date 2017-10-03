@@ -279,6 +279,12 @@ a, a > code {
 			color: $subtitle-color;
 		}
 	}
+	&.inverse h1 {
+		color: invert($title-color);
+		.subtitle {
+			color: invert($subtitle-color);
+		}
+	}
 	h2 {
 		font: {
 			size: 1.4em;
