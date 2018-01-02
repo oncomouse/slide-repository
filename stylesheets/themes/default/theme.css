@@ -1,0 +1,2658 @@
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+@import url("../../fonts/opensans/opensans.css");
+html {
+  /* Change default typefaces here */
+  font-family: serif;
+  font-size: 125%;
+  -webkit-font-smoothing: antialiased; }
+
+/* Copy & Lists */
+p {
+  line-height: 1.35rem;
+  margin-top: 1.35rem;
+  margin-bottom: 0; }
+
+pre {
+  margin-top: 1.35rem !important; }
+
+ul, ol {
+  margin-top: 1.35rem;
+  margin-bottom: 1.35rem; }
+  ul li, ol li {
+    line-height: 1.35rem; }
+  ul ul, ul ol, ol ul, ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1.5rem; }
+
+ol + ul, ul + ol {
+  margin-top: -1.35rem; }
+
+blockquote {
+  line-height: 1.35rem;
+  margin-top: 1.35rem;
+  margin-bottom: 1.35rem; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  /* Change heading typefaces here */
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 1.35rem;
+  margin-bottom: 0;
+  line-height: 1.35rem; }
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 4.05rem;
+  margin-top: 2.7rem; }
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 2.7rem;
+  margin-top: 2.7rem; }
+
+h3 {
+  font-size: 1.25rem; }
+
+h4 {
+  font-size: 0.625rem; }
+
+h5 {
+  font-size: 0.41667rem; }
+
+h6 {
+  font-size: 0.3125rem; }
+
+/* Tables */
+table {
+  margin-top: 1.35rem;
+  border-spacing: 0px;
+  border-collapse: collapse; }
+  table td, table th {
+    padding: 0;
+    line-height: 27px; }
+
+/* Code blocks */
+code {
+  vertical-align: bottom; }
+
+/* Leading paragraph text */
+.lead {
+  font-size: 1.25rem; }
+
+/* Hug a the block above you */
+.hug {
+  margin-top: 0; }
+
+@media all and (max-width: 30em) {
+  body {
+    font-size: 16px !important; } }
+html {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 400; }
+  html strong {
+    font-weight: 700; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 600; }
+  h1 .soft,
+  h2 .soft,
+  h3 .soft,
+  h4 .soft,
+  h5 .soft {
+    font-weight: 400; }
+
+hr {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  color: black;
+  background: black;
+  margin: 2em auto; }
+
+code {
+  overflow: auto; }
+
+img {
+  max-width: 100%;
+  max-height: 565px; }
+
+body {
+  color: black; }
+
+.remark-slide {
+  background-color: white; }
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto; }
+
+.emph,
+strong {
+  color: #002387; }
+
+a,
+a > code {
+  color: #002387; }
+
+.inverse {
+  background: black;
+  color: white; }
+  .inverse h1,
+  .inverse h2 {
+    text-shadow: 1px 1px 2px rgba(136, 136, 136, 0.2); }
+
+.left-column {
+  color: #0d0d0d; }
+  .left-column h1,
+  .left-column h2,
+  .left-column h3 {
+    color: #0d0d0d; }
+  .left-column .current {
+    color: #002387; }
+
+#remark-progress-content {
+  background-color: #002387; }
+
+#slideshow .slide .content code {
+  font-size: 0.8em; }
+#slideshow .slide .content pre code {
+  font-size: 0.9em;
+  padding: 15px; }
+
+.remark-slide-content::after {
+  clear: both;
+  content: "";
+  display: block; }
+.remark-slide-content > h1:first-child, .remark-slide-content > h2:first-child, .remark-slide-content > h3:first-child, .remark-slide-content > h4:first-child, .remark-slide-content > h5:first-child, .remark-slide-content > h6:first-child {
+  margin-top: 0; }
+
+.middle > *:first-child {
+  margin-top: 0; }
+
+.twitter_name {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  font-weight: bold;
+  opacity: 0.75;
+  text-align: left; }
+
+.twitter_badge {
+  position: relative;
+  margin-left: 1.15em; }
+  .twitter_badge:before, .twitter_badge:after {
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.95em; }
+  .twitter_badge:before {
+    content: "\f099";
+    position: absolute;
+    top: 0.3em;
+    left: -1.15em; }
+
+.left-column {
+  height: 92%;
+  width: calc(25% - 25px);
+  float: left;
+  margin-left: 20px; }
+
+.right-column {
+  width: calc(75% - 35px);
+  float: left;
+  margin-left: 20px;
+  padding-top: 2em; }
+  .right-column .big {
+    font-size: 1.5em; }
+
+.pull-left {
+  float: left;
+  width: 47%; }
+
+.pull-right {
+  float: right;
+  width: 47%; }
+
+.pull-right ~ p {
+  clear: both; }
+
+.two-column {
+  column-count: 2;
+  column-width: 44%;
+  column-gap: 6%;
+  column-fill: auto; }
+  .two-column h1,
+  .two-column h2 {
+    column-span: all; }
+
+.no-margin blockquote {
+  margin-left: 0;
+  margin-right: 0; }
+
+.inverse h1 {
+  line-height: 0.8em;
+  margin-bottom: 1.618em; }
+
+.pushdown > h1:first-child, .pushdown h2:first-child, .pushdown h3:first-child, .pushdown h4:first-child, .pushdown h5:first-child {
+  margin-top: 5rem; }
+
+.source {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  bottom: 2rem;
+  position: absolute; }
+
+.no-bullets ol,
+.no-bullets ul {
+  list-style: none; }
+
+.topic {
+  font-size: 1.5em;
+  display: block;
+  position: absolute;
+  bottom: 14px;
+  right: 10%;
+  color: #002387; }
+
+.title-block {
+  margin: 1.75em 0; }
+  .title-block h1,
+  .title-block h2,
+  .title-block h3,
+  .title-block h4,
+  .title-block h5 {
+    line-height: 1.1em;
+    margin: 0; }
+
+.title h1 {
+  font-size: 2.4em;
+  color: black; }
+  .title h1 .subtitle {
+    font-size: 0.83333em;
+    color: black; }
+.title.inverse h1 {
+  color: white; }
+  .title.inverse h1 .subtitle {
+    color: white; }
+.title h2 {
+  font-size: 1.4em;
+  font-weight: normal; }
+.title h3 {
+  font-size: 1.2em;
+  font-weight: normal; }
+
+.works-cited ul,
+.works-cited ol {
+  list-style-type: none;
+  padding-left: 0; }
+.works-cited li {
+  padding-left: 0.5in;
+  text-indent: -0.5in;
+  margin-bottom: 1em; }
+.works-cited .ibid {
+  display: inline-block;
+  width: 1in;
+  height: 1px;
+  background: black;
+  margin-bottom: 0.5em; }
+
+.phantom {
+  color: white !important; }
+  .phantom img,
+  .phantom img.phantom {
+    opacity: 0; }
+
+.inverse .phantom {
+  color: black !important; }
+
+#remark-progress-content {
+  background-color: #002387; }
+
+.f5px p,
+.f5px li,
+.f5px td {
+  font-size: 5px;
+  line-height: 1.4; }
+.f5px small {
+  font-size: 4.25px; }
+
+span.f5px {
+  font-size: 5px;
+  line-height: 1.4; }
+
+.f5px img.emoji {
+  height: 5px;
+  max-height: 72px; }
+
+.f6px p,
+.f6px li,
+.f6px td {
+  font-size: 6px;
+  line-height: 1.4; }
+.f6px small {
+  font-size: 5.1px; }
+
+span.f6px {
+  font-size: 6px;
+  line-height: 1.4; }
+
+.f6px img.emoji {
+  height: 6px;
+  max-height: 72px; }
+
+.f7px p,
+.f7px li,
+.f7px td {
+  font-size: 7px;
+  line-height: 1.4; }
+.f7px small {
+  font-size: 5.95px; }
+
+span.f7px {
+  font-size: 7px;
+  line-height: 1.4; }
+
+.f7px img.emoji {
+  height: 7px;
+  max-height: 72px; }
+
+.f8px p,
+.f8px li,
+.f8px td {
+  font-size: 8px;
+  line-height: 1.4; }
+.f8px small {
+  font-size: 6.8px; }
+
+span.f8px {
+  font-size: 8px;
+  line-height: 1.4; }
+
+.f8px img.emoji {
+  height: 8px;
+  max-height: 72px; }
+
+.f9px p,
+.f9px li,
+.f9px td {
+  font-size: 9px;
+  line-height: 1.4; }
+.f9px small {
+  font-size: 7.65px; }
+
+span.f9px {
+  font-size: 9px;
+  line-height: 1.4; }
+
+.f9px img.emoji {
+  height: 9px;
+  max-height: 72px; }
+
+.f10px p,
+.f10px li,
+.f10px td {
+  font-size: 10px;
+  line-height: 1.4; }
+.f10px small {
+  font-size: 8.5px; }
+
+span.f10px {
+  font-size: 10px;
+  line-height: 1.4; }
+
+.f10px img.emoji {
+  height: 10px;
+  max-height: 72px; }
+
+.f11px p,
+.f11px li,
+.f11px td {
+  font-size: 11px;
+  line-height: 1.4; }
+.f11px small {
+  font-size: 9.35px; }
+
+span.f11px {
+  font-size: 11px;
+  line-height: 1.4; }
+
+.f11px img.emoji {
+  height: 11px;
+  max-height: 72px; }
+
+.f12px p,
+.f12px li,
+.f12px td {
+  font-size: 12px;
+  line-height: 1.4; }
+.f12px small {
+  font-size: 10.2px; }
+
+span.f12px {
+  font-size: 12px;
+  line-height: 1.4; }
+
+.f12px img.emoji {
+  height: 12px;
+  max-height: 72px; }
+
+.f13px p,
+.f13px li,
+.f13px td {
+  font-size: 13px;
+  line-height: 1.4; }
+.f13px small {
+  font-size: 11.05px; }
+
+span.f13px {
+  font-size: 13px;
+  line-height: 1.4; }
+
+.f13px img.emoji {
+  height: 13px;
+  max-height: 72px; }
+
+.f14px p,
+.f14px li,
+.f14px td {
+  font-size: 14px;
+  line-height: 1.4; }
+.f14px small {
+  font-size: 11.9px; }
+
+span.f14px {
+  font-size: 14px;
+  line-height: 1.4; }
+
+.f14px img.emoji {
+  height: 14px;
+  max-height: 72px; }
+
+.f15px p,
+.f15px li,
+.f15px td {
+  font-size: 15px;
+  line-height: 1.4; }
+.f15px small {
+  font-size: 12.75px; }
+
+span.f15px {
+  font-size: 15px;
+  line-height: 1.4; }
+
+.f15px img.emoji {
+  height: 15px;
+  max-height: 72px; }
+
+.f16px p,
+.f16px li,
+.f16px td {
+  font-size: 16px;
+  line-height: 1.4; }
+.f16px small {
+  font-size: 13.6px; }
+
+span.f16px {
+  font-size: 16px;
+  line-height: 1.4; }
+
+.f16px img.emoji {
+  height: 16px;
+  max-height: 72px; }
+
+.f17px p,
+.f17px li,
+.f17px td {
+  font-size: 17px;
+  line-height: 1.4; }
+.f17px small {
+  font-size: 14.45px; }
+
+span.f17px {
+  font-size: 17px;
+  line-height: 1.4; }
+
+.f17px img.emoji {
+  height: 17px;
+  max-height: 72px; }
+
+.f18px p,
+.f18px li,
+.f18px td {
+  font-size: 18px;
+  line-height: 1.4; }
+.f18px small {
+  font-size: 15.3px; }
+
+span.f18px {
+  font-size: 18px;
+  line-height: 1.4; }
+
+.f18px img.emoji {
+  height: 18px;
+  max-height: 72px; }
+
+.f19px p,
+.f19px li,
+.f19px td {
+  font-size: 19px;
+  line-height: 1.4; }
+.f19px small {
+  font-size: 16.15px; }
+
+span.f19px {
+  font-size: 19px;
+  line-height: 1.4; }
+
+.f19px img.emoji {
+  height: 19px;
+  max-height: 72px; }
+
+.f20px p,
+.f20px li,
+.f20px td {
+  font-size: 20px;
+  line-height: 1.4; }
+.f20px small {
+  font-size: 17px; }
+
+span.f20px {
+  font-size: 20px;
+  line-height: 1.4; }
+
+.f20px img.emoji {
+  height: 20px;
+  max-height: 72px; }
+
+.f21px p,
+.f21px li,
+.f21px td {
+  font-size: 21px;
+  line-height: 1.4; }
+.f21px small {
+  font-size: 17.85px; }
+
+span.f21px {
+  font-size: 21px;
+  line-height: 1.4; }
+
+.f21px img.emoji {
+  height: 21px;
+  max-height: 72px; }
+
+.f22px p,
+.f22px li,
+.f22px td {
+  font-size: 22px;
+  line-height: 1.4; }
+.f22px small {
+  font-size: 18.7px; }
+
+span.f22px {
+  font-size: 22px;
+  line-height: 1.4; }
+
+.f22px img.emoji {
+  height: 22px;
+  max-height: 72px; }
+
+.f23px p,
+.f23px li,
+.f23px td {
+  font-size: 23px;
+  line-height: 1.4; }
+.f23px small {
+  font-size: 19.55px; }
+
+span.f23px {
+  font-size: 23px;
+  line-height: 1.4; }
+
+.f23px img.emoji {
+  height: 23px;
+  max-height: 72px; }
+
+.f24px p,
+.f24px li,
+.f24px td {
+  font-size: 24px;
+  line-height: 1.4; }
+.f24px small {
+  font-size: 20.4px; }
+
+span.f24px {
+  font-size: 24px;
+  line-height: 1.4; }
+
+.f24px img.emoji {
+  height: 24px;
+  max-height: 72px; }
+
+.f25px p,
+.f25px li,
+.f25px td {
+  font-size: 25px;
+  line-height: 1.4; }
+.f25px small {
+  font-size: 21.25px; }
+
+span.f25px {
+  font-size: 25px;
+  line-height: 1.4; }
+
+.f25px img.emoji {
+  height: 25px;
+  max-height: 72px; }
+
+.f26px p,
+.f26px li,
+.f26px td {
+  font-size: 26px;
+  line-height: 1.4; }
+.f26px small {
+  font-size: 22.1px; }
+
+span.f26px {
+  font-size: 26px;
+  line-height: 1.4; }
+
+.f26px img.emoji {
+  height: 26px;
+  max-height: 72px; }
+
+.f27px p,
+.f27px li,
+.f27px td {
+  font-size: 27px;
+  line-height: 1.4; }
+.f27px small {
+  font-size: 22.95px; }
+
+span.f27px {
+  font-size: 27px;
+  line-height: 1.4; }
+
+.f27px img.emoji {
+  height: 27px;
+  max-height: 72px; }
+
+.f28px p,
+.f28px li,
+.f28px td {
+  font-size: 28px;
+  line-height: 1.4; }
+.f28px small {
+  font-size: 23.8px; }
+
+span.f28px {
+  font-size: 28px;
+  line-height: 1.4; }
+
+.f28px img.emoji {
+  height: 28px;
+  max-height: 72px; }
+
+.f29px p,
+.f29px li,
+.f29px td {
+  font-size: 29px;
+  line-height: 1.4; }
+.f29px small {
+  font-size: 24.65px; }
+
+span.f29px {
+  font-size: 29px;
+  line-height: 1.4; }
+
+.f29px img.emoji {
+  height: 29px;
+  max-height: 72px; }
+
+.f30px p,
+.f30px li,
+.f30px td {
+  font-size: 30px;
+  line-height: 1.4; }
+.f30px small {
+  font-size: 25.5px; }
+
+span.f30px {
+  font-size: 30px;
+  line-height: 1.4; }
+
+.f30px img.emoji {
+  height: 30px;
+  max-height: 72px; }
+
+.f31px p,
+.f31px li,
+.f31px td {
+  font-size: 31px;
+  line-height: 1.4; }
+.f31px small {
+  font-size: 26.35px; }
+
+span.f31px {
+  font-size: 31px;
+  line-height: 1.4; }
+
+.f31px img.emoji {
+  height: 31px;
+  max-height: 72px; }
+
+.f32px p,
+.f32px li,
+.f32px td {
+  font-size: 32px;
+  line-height: 1.4; }
+.f32px small {
+  font-size: 27.2px; }
+
+span.f32px {
+  font-size: 32px;
+  line-height: 1.4; }
+
+.f32px img.emoji {
+  height: 32px;
+  max-height: 72px; }
+
+.f33px p,
+.f33px li,
+.f33px td {
+  font-size: 33px;
+  line-height: 1.4; }
+.f33px small {
+  font-size: 28.05px; }
+
+span.f33px {
+  font-size: 33px;
+  line-height: 1.4; }
+
+.f33px img.emoji {
+  height: 33px;
+  max-height: 72px; }
+
+.f34px p,
+.f34px li,
+.f34px td {
+  font-size: 34px;
+  line-height: 1.4; }
+.f34px small {
+  font-size: 28.9px; }
+
+span.f34px {
+  font-size: 34px;
+  line-height: 1.4; }
+
+.f34px img.emoji {
+  height: 34px;
+  max-height: 72px; }
+
+.f35px p,
+.f35px li,
+.f35px td {
+  font-size: 35px;
+  line-height: 1.4; }
+.f35px small {
+  font-size: 29.75px; }
+
+span.f35px {
+  font-size: 35px;
+  line-height: 1.4; }
+
+.f35px img.emoji {
+  height: 35px;
+  max-height: 72px; }
+
+.f36px p,
+.f36px li,
+.f36px td {
+  font-size: 36px;
+  line-height: 1.4; }
+.f36px small {
+  font-size: 30.6px; }
+
+span.f36px {
+  font-size: 36px;
+  line-height: 1.4; }
+
+.f36px img.emoji {
+  height: 36px;
+  max-height: 72px; }
+
+.f37px p,
+.f37px li,
+.f37px td {
+  font-size: 37px;
+  line-height: 1.4; }
+.f37px small {
+  font-size: 31.45px; }
+
+span.f37px {
+  font-size: 37px;
+  line-height: 1.4; }
+
+.f37px img.emoji {
+  height: 37px;
+  max-height: 72px; }
+
+.f38px p,
+.f38px li,
+.f38px td {
+  font-size: 38px;
+  line-height: 1.4; }
+.f38px small {
+  font-size: 32.3px; }
+
+span.f38px {
+  font-size: 38px;
+  line-height: 1.4; }
+
+.f38px img.emoji {
+  height: 38px;
+  max-height: 72px; }
+
+.f39px p,
+.f39px li,
+.f39px td {
+  font-size: 39px;
+  line-height: 1.4; }
+.f39px small {
+  font-size: 33.15px; }
+
+span.f39px {
+  font-size: 39px;
+  line-height: 1.4; }
+
+.f39px img.emoji {
+  height: 39px;
+  max-height: 72px; }
+
+.f40px p,
+.f40px li,
+.f40px td {
+  font-size: 40px;
+  line-height: 1.4; }
+.f40px small {
+  font-size: 34px; }
+
+span.f40px {
+  font-size: 40px;
+  line-height: 1.4; }
+
+.f40px img.emoji {
+  height: 40px;
+  max-height: 72px; }
+
+.f41px p,
+.f41px li,
+.f41px td {
+  font-size: 41px;
+  line-height: 1.4; }
+.f41px small {
+  font-size: 34.85px; }
+
+span.f41px {
+  font-size: 41px;
+  line-height: 1.4; }
+
+.f41px img.emoji {
+  height: 41px;
+  max-height: 72px; }
+
+.f42px p,
+.f42px li,
+.f42px td {
+  font-size: 42px;
+  line-height: 1.4; }
+.f42px small {
+  font-size: 35.7px; }
+
+span.f42px {
+  font-size: 42px;
+  line-height: 1.4; }
+
+.f42px img.emoji {
+  height: 42px;
+  max-height: 72px; }
+
+.f43px p,
+.f43px li,
+.f43px td {
+  font-size: 43px;
+  line-height: 1.4; }
+.f43px small {
+  font-size: 36.55px; }
+
+span.f43px {
+  font-size: 43px;
+  line-height: 1.4; }
+
+.f43px img.emoji {
+  height: 43px;
+  max-height: 72px; }
+
+.f44px p,
+.f44px li,
+.f44px td {
+  font-size: 44px;
+  line-height: 1.4; }
+.f44px small {
+  font-size: 37.4px; }
+
+span.f44px {
+  font-size: 44px;
+  line-height: 1.4; }
+
+.f44px img.emoji {
+  height: 44px;
+  max-height: 72px; }
+
+.f45px p,
+.f45px li,
+.f45px td {
+  font-size: 45px;
+  line-height: 1.4; }
+.f45px small {
+  font-size: 38.25px; }
+
+span.f45px {
+  font-size: 45px;
+  line-height: 1.4; }
+
+.f45px img.emoji {
+  height: 45px;
+  max-height: 72px; }
+
+.f46px p,
+.f46px li,
+.f46px td {
+  font-size: 46px;
+  line-height: 1.4; }
+.f46px small {
+  font-size: 39.1px; }
+
+span.f46px {
+  font-size: 46px;
+  line-height: 1.4; }
+
+.f46px img.emoji {
+  height: 46px;
+  max-height: 72px; }
+
+.f47px p,
+.f47px li,
+.f47px td {
+  font-size: 47px;
+  line-height: 1.4; }
+.f47px small {
+  font-size: 39.95px; }
+
+span.f47px {
+  font-size: 47px;
+  line-height: 1.4; }
+
+.f47px img.emoji {
+  height: 47px;
+  max-height: 72px; }
+
+.f48px p,
+.f48px li,
+.f48px td {
+  font-size: 48px;
+  line-height: 1.4; }
+.f48px small {
+  font-size: 40.8px; }
+
+span.f48px {
+  font-size: 48px;
+  line-height: 1.4; }
+
+.f48px img.emoji {
+  height: 48px;
+  max-height: 72px; }
+
+.f49px p,
+.f49px li,
+.f49px td {
+  font-size: 49px;
+  line-height: 1.4; }
+.f49px small {
+  font-size: 41.65px; }
+
+span.f49px {
+  font-size: 49px;
+  line-height: 1.4; }
+
+.f49px img.emoji {
+  height: 49px;
+  max-height: 72px; }
+
+.f50px p,
+.f50px li,
+.f50px td {
+  font-size: 50px;
+  line-height: 1.4; }
+.f50px small {
+  font-size: 42.5px; }
+
+span.f50px {
+  font-size: 50px;
+  line-height: 1.4; }
+
+.f50px img.emoji {
+  height: 50px;
+  max-height: 72px; }
+
+.f51px p,
+.f51px li,
+.f51px td {
+  font-size: 51px;
+  line-height: 1.4; }
+.f51px small {
+  font-size: 43.35px; }
+
+span.f51px {
+  font-size: 51px;
+  line-height: 1.4; }
+
+.f51px img.emoji {
+  height: 51px;
+  max-height: 72px; }
+
+.f52px p,
+.f52px li,
+.f52px td {
+  font-size: 52px;
+  line-height: 1.4; }
+.f52px small {
+  font-size: 44.2px; }
+
+span.f52px {
+  font-size: 52px;
+  line-height: 1.4; }
+
+.f52px img.emoji {
+  height: 52px;
+  max-height: 72px; }
+
+.f53px p,
+.f53px li,
+.f53px td {
+  font-size: 53px;
+  line-height: 1.4; }
+.f53px small {
+  font-size: 45.05px; }
+
+span.f53px {
+  font-size: 53px;
+  line-height: 1.4; }
+
+.f53px img.emoji {
+  height: 53px;
+  max-height: 72px; }
+
+.f54px p,
+.f54px li,
+.f54px td {
+  font-size: 54px;
+  line-height: 1.4; }
+.f54px small {
+  font-size: 45.9px; }
+
+span.f54px {
+  font-size: 54px;
+  line-height: 1.4; }
+
+.f54px img.emoji {
+  height: 54px;
+  max-height: 72px; }
+
+.f55px p,
+.f55px li,
+.f55px td {
+  font-size: 55px;
+  line-height: 1.4; }
+.f55px small {
+  font-size: 46.75px; }
+
+span.f55px {
+  font-size: 55px;
+  line-height: 1.4; }
+
+.f55px img.emoji {
+  height: 55px;
+  max-height: 72px; }
+
+.f56px p,
+.f56px li,
+.f56px td {
+  font-size: 56px;
+  line-height: 1.4; }
+.f56px small {
+  font-size: 47.6px; }
+
+span.f56px {
+  font-size: 56px;
+  line-height: 1.4; }
+
+.f56px img.emoji {
+  height: 56px;
+  max-height: 72px; }
+
+.f57px p,
+.f57px li,
+.f57px td {
+  font-size: 57px;
+  line-height: 1.4; }
+.f57px small {
+  font-size: 48.45px; }
+
+span.f57px {
+  font-size: 57px;
+  line-height: 1.4; }
+
+.f57px img.emoji {
+  height: 57px;
+  max-height: 72px; }
+
+.f58px p,
+.f58px li,
+.f58px td {
+  font-size: 58px;
+  line-height: 1.4; }
+.f58px small {
+  font-size: 49.3px; }
+
+span.f58px {
+  font-size: 58px;
+  line-height: 1.4; }
+
+.f58px img.emoji {
+  height: 58px;
+  max-height: 72px; }
+
+.f59px p,
+.f59px li,
+.f59px td {
+  font-size: 59px;
+  line-height: 1.4; }
+.f59px small {
+  font-size: 50.15px; }
+
+span.f59px {
+  font-size: 59px;
+  line-height: 1.4; }
+
+.f59px img.emoji {
+  height: 59px;
+  max-height: 72px; }
+
+.f60px p,
+.f60px li,
+.f60px td {
+  font-size: 60px;
+  line-height: 1.4; }
+.f60px small {
+  font-size: 51px; }
+
+span.f60px {
+  font-size: 60px;
+  line-height: 1.4; }
+
+.f60px img.emoji {
+  height: 60px;
+  max-height: 72px; }
+
+.f61px p,
+.f61px li,
+.f61px td {
+  font-size: 61px;
+  line-height: 1.4; }
+.f61px small {
+  font-size: 51.85px; }
+
+span.f61px {
+  font-size: 61px;
+  line-height: 1.4; }
+
+.f61px img.emoji {
+  height: 61px;
+  max-height: 72px; }
+
+.f62px p,
+.f62px li,
+.f62px td {
+  font-size: 62px;
+  line-height: 1.4; }
+.f62px small {
+  font-size: 52.7px; }
+
+span.f62px {
+  font-size: 62px;
+  line-height: 1.4; }
+
+.f62px img.emoji {
+  height: 62px;
+  max-height: 72px; }
+
+.f63px p,
+.f63px li,
+.f63px td {
+  font-size: 63px;
+  line-height: 1.4; }
+.f63px small {
+  font-size: 53.55px; }
+
+span.f63px {
+  font-size: 63px;
+  line-height: 1.4; }
+
+.f63px img.emoji {
+  height: 63px;
+  max-height: 72px; }
+
+.f64px p,
+.f64px li,
+.f64px td {
+  font-size: 64px;
+  line-height: 1.4; }
+.f64px small {
+  font-size: 54.4px; }
+
+span.f64px {
+  font-size: 64px;
+  line-height: 1.4; }
+
+.f64px img.emoji {
+  height: 64px;
+  max-height: 72px; }
+
+.f65px p,
+.f65px li,
+.f65px td {
+  font-size: 65px;
+  line-height: 1.4; }
+.f65px small {
+  font-size: 55.25px; }
+
+span.f65px {
+  font-size: 65px;
+  line-height: 1.4; }
+
+.f65px img.emoji {
+  height: 65px;
+  max-height: 72px; }
+
+.f66px p,
+.f66px li,
+.f66px td {
+  font-size: 66px;
+  line-height: 1.4; }
+.f66px small {
+  font-size: 56.1px; }
+
+span.f66px {
+  font-size: 66px;
+  line-height: 1.4; }
+
+.f66px img.emoji {
+  height: 66px;
+  max-height: 72px; }
+
+.f67px p,
+.f67px li,
+.f67px td {
+  font-size: 67px;
+  line-height: 1.4; }
+.f67px small {
+  font-size: 56.95px; }
+
+span.f67px {
+  font-size: 67px;
+  line-height: 1.4; }
+
+.f67px img.emoji {
+  height: 67px;
+  max-height: 72px; }
+
+.f68px p,
+.f68px li,
+.f68px td {
+  font-size: 68px;
+  line-height: 1.4; }
+.f68px small {
+  font-size: 57.8px; }
+
+span.f68px {
+  font-size: 68px;
+  line-height: 1.4; }
+
+.f68px img.emoji {
+  height: 68px;
+  max-height: 72px; }
+
+.f69px p,
+.f69px li,
+.f69px td {
+  font-size: 69px;
+  line-height: 1.4; }
+.f69px small {
+  font-size: 58.65px; }
+
+span.f69px {
+  font-size: 69px;
+  line-height: 1.4; }
+
+.f69px img.emoji {
+  height: 69px;
+  max-height: 72px; }
+
+.f70px p,
+.f70px li,
+.f70px td {
+  font-size: 70px;
+  line-height: 1.4; }
+.f70px small {
+  font-size: 59.5px; }
+
+span.f70px {
+  font-size: 70px;
+  line-height: 1.4; }
+
+.f70px img.emoji {
+  height: 70px;
+  max-height: 72px; }
+
+.f71px p,
+.f71px li,
+.f71px td {
+  font-size: 71px;
+  line-height: 1.4; }
+.f71px small {
+  font-size: 60.35px; }
+
+span.f71px {
+  font-size: 71px;
+  line-height: 1.4; }
+
+.f71px img.emoji {
+  height: 71px;
+  max-height: 72px; }
+
+.f72px p,
+.f72px li,
+.f72px td {
+  font-size: 72px;
+  line-height: 1.4; }
+.f72px small {
+  font-size: 61.2px; }
+
+span.f72px {
+  font-size: 72px;
+  line-height: 1.4; }
+
+.f72px img.emoji {
+  height: 72px;
+  max-height: 72px; }
+
+.f73px p,
+.f73px li,
+.f73px td {
+  font-size: 73px;
+  line-height: 1.4; }
+.f73px small {
+  font-size: 62.05px; }
+
+span.f73px {
+  font-size: 73px;
+  line-height: 1.4; }
+
+.f73px img.emoji {
+  height: 73px;
+  max-height: 72px; }
+
+.f74px p,
+.f74px li,
+.f74px td {
+  font-size: 74px;
+  line-height: 1.4; }
+.f74px small {
+  font-size: 62.9px; }
+
+span.f74px {
+  font-size: 74px;
+  line-height: 1.4; }
+
+.f74px img.emoji {
+  height: 74px;
+  max-height: 72px; }
+
+.f75px p,
+.f75px li,
+.f75px td {
+  font-size: 75px;
+  line-height: 1.4; }
+.f75px small {
+  font-size: 63.75px; }
+
+span.f75px {
+  font-size: 75px;
+  line-height: 1.4; }
+
+.f75px img.emoji {
+  height: 75px;
+  max-height: 72px; }
+
+.f76px p,
+.f76px li,
+.f76px td {
+  font-size: 76px;
+  line-height: 1.4; }
+.f76px small {
+  font-size: 64.6px; }
+
+span.f76px {
+  font-size: 76px;
+  line-height: 1.4; }
+
+.f76px img.emoji {
+  height: 76px;
+  max-height: 72px; }
+
+.f77px p,
+.f77px li,
+.f77px td {
+  font-size: 77px;
+  line-height: 1.4; }
+.f77px small {
+  font-size: 65.45px; }
+
+span.f77px {
+  font-size: 77px;
+  line-height: 1.4; }
+
+.f77px img.emoji {
+  height: 77px;
+  max-height: 72px; }
+
+.f78px p,
+.f78px li,
+.f78px td {
+  font-size: 78px;
+  line-height: 1.4; }
+.f78px small {
+  font-size: 66.3px; }
+
+span.f78px {
+  font-size: 78px;
+  line-height: 1.4; }
+
+.f78px img.emoji {
+  height: 78px;
+  max-height: 72px; }
+
+.f79px p,
+.f79px li,
+.f79px td {
+  font-size: 79px;
+  line-height: 1.4; }
+.f79px small {
+  font-size: 67.15px; }
+
+span.f79px {
+  font-size: 79px;
+  line-height: 1.4; }
+
+.f79px img.emoji {
+  height: 79px;
+  max-height: 72px; }
+
+.f80px p,
+.f80px li,
+.f80px td {
+  font-size: 80px;
+  line-height: 1.4; }
+.f80px small {
+  font-size: 68px; }
+
+span.f80px {
+  font-size: 80px;
+  line-height: 1.4; }
+
+.f80px img.emoji {
+  height: 80px;
+  max-height: 72px; }
+
+.f81px p,
+.f81px li,
+.f81px td {
+  font-size: 81px;
+  line-height: 1.4; }
+.f81px small {
+  font-size: 68.85px; }
+
+span.f81px {
+  font-size: 81px;
+  line-height: 1.4; }
+
+.f81px img.emoji {
+  height: 81px;
+  max-height: 72px; }
+
+.f82px p,
+.f82px li,
+.f82px td {
+  font-size: 82px;
+  line-height: 1.4; }
+.f82px small {
+  font-size: 69.7px; }
+
+span.f82px {
+  font-size: 82px;
+  line-height: 1.4; }
+
+.f82px img.emoji {
+  height: 82px;
+  max-height: 72px; }
+
+.f83px p,
+.f83px li,
+.f83px td {
+  font-size: 83px;
+  line-height: 1.4; }
+.f83px small {
+  font-size: 70.55px; }
+
+span.f83px {
+  font-size: 83px;
+  line-height: 1.4; }
+
+.f83px img.emoji {
+  height: 83px;
+  max-height: 72px; }
+
+.f84px p,
+.f84px li,
+.f84px td {
+  font-size: 84px;
+  line-height: 1.4; }
+.f84px small {
+  font-size: 71.4px; }
+
+span.f84px {
+  font-size: 84px;
+  line-height: 1.4; }
+
+.f84px img.emoji {
+  height: 84px;
+  max-height: 72px; }
+
+.f85px p,
+.f85px li,
+.f85px td {
+  font-size: 85px;
+  line-height: 1.4; }
+.f85px small {
+  font-size: 72.25px; }
+
+span.f85px {
+  font-size: 85px;
+  line-height: 1.4; }
+
+.f85px img.emoji {
+  height: 85px;
+  max-height: 72px; }
+
+.f86px p,
+.f86px li,
+.f86px td {
+  font-size: 86px;
+  line-height: 1.4; }
+.f86px small {
+  font-size: 73.1px; }
+
+span.f86px {
+  font-size: 86px;
+  line-height: 1.4; }
+
+.f86px img.emoji {
+  height: 86px;
+  max-height: 72px; }
+
+.f87px p,
+.f87px li,
+.f87px td {
+  font-size: 87px;
+  line-height: 1.4; }
+.f87px small {
+  font-size: 73.95px; }
+
+span.f87px {
+  font-size: 87px;
+  line-height: 1.4; }
+
+.f87px img.emoji {
+  height: 87px;
+  max-height: 72px; }
+
+.f88px p,
+.f88px li,
+.f88px td {
+  font-size: 88px;
+  line-height: 1.4; }
+.f88px small {
+  font-size: 74.8px; }
+
+span.f88px {
+  font-size: 88px;
+  line-height: 1.4; }
+
+.f88px img.emoji {
+  height: 88px;
+  max-height: 72px; }
+
+.f89px p,
+.f89px li,
+.f89px td {
+  font-size: 89px;
+  line-height: 1.4; }
+.f89px small {
+  font-size: 75.65px; }
+
+span.f89px {
+  font-size: 89px;
+  line-height: 1.4; }
+
+.f89px img.emoji {
+  height: 89px;
+  max-height: 72px; }
+
+.f90px p,
+.f90px li,
+.f90px td {
+  font-size: 90px;
+  line-height: 1.4; }
+.f90px small {
+  font-size: 76.5px; }
+
+span.f90px {
+  font-size: 90px;
+  line-height: 1.4; }
+
+.f90px img.emoji {
+  height: 90px;
+  max-height: 72px; }
+
+.f91px p,
+.f91px li,
+.f91px td {
+  font-size: 91px;
+  line-height: 1.4; }
+.f91px small {
+  font-size: 77.35px; }
+
+span.f91px {
+  font-size: 91px;
+  line-height: 1.4; }
+
+.f91px img.emoji {
+  height: 91px;
+  max-height: 72px; }
+
+.f92px p,
+.f92px li,
+.f92px td {
+  font-size: 92px;
+  line-height: 1.4; }
+.f92px small {
+  font-size: 78.2px; }
+
+span.f92px {
+  font-size: 92px;
+  line-height: 1.4; }
+
+.f92px img.emoji {
+  height: 92px;
+  max-height: 72px; }
+
+.f93px p,
+.f93px li,
+.f93px td {
+  font-size: 93px;
+  line-height: 1.4; }
+.f93px small {
+  font-size: 79.05px; }
+
+span.f93px {
+  font-size: 93px;
+  line-height: 1.4; }
+
+.f93px img.emoji {
+  height: 93px;
+  max-height: 72px; }
+
+.f94px p,
+.f94px li,
+.f94px td {
+  font-size: 94px;
+  line-height: 1.4; }
+.f94px small {
+  font-size: 79.9px; }
+
+span.f94px {
+  font-size: 94px;
+  line-height: 1.4; }
+
+.f94px img.emoji {
+  height: 94px;
+  max-height: 72px; }
+
+.f95px p,
+.f95px li,
+.f95px td {
+  font-size: 95px;
+  line-height: 1.4; }
+.f95px small {
+  font-size: 80.75px; }
+
+span.f95px {
+  font-size: 95px;
+  line-height: 1.4; }
+
+.f95px img.emoji {
+  height: 95px;
+  max-height: 72px; }
+
+.f96px p,
+.f96px li,
+.f96px td {
+  font-size: 96px;
+  line-height: 1.4; }
+.f96px small {
+  font-size: 81.6px; }
+
+span.f96px {
+  font-size: 96px;
+  line-height: 1.4; }
+
+.f96px img.emoji {
+  height: 96px;
+  max-height: 72px; }
+
+.f97px p,
+.f97px li,
+.f97px td {
+  font-size: 97px;
+  line-height: 1.4; }
+.f97px small {
+  font-size: 82.45px; }
+
+span.f97px {
+  font-size: 97px;
+  line-height: 1.4; }
+
+.f97px img.emoji {
+  height: 97px;
+  max-height: 72px; }
+
+.f98px p,
+.f98px li,
+.f98px td {
+  font-size: 98px;
+  line-height: 1.4; }
+.f98px small {
+  font-size: 83.3px; }
+
+span.f98px {
+  font-size: 98px;
+  line-height: 1.4; }
+
+.f98px img.emoji {
+  height: 98px;
+  max-height: 72px; }
+
+.f99px p,
+.f99px li,
+.f99px td {
+  font-size: 99px;
+  line-height: 1.4; }
+.f99px small {
+  font-size: 84.15px; }
+
+span.f99px {
+  font-size: 99px;
+  line-height: 1.4; }
+
+.f99px img.emoji {
+  height: 99px;
+  max-height: 72px; }
+
+.f100px p,
+.f100px li,
+.f100px td {
+  font-size: 100px;
+  line-height: 1.4; }
+.f100px small {
+  font-size: 85px; }
+
+span.f100px {
+  font-size: 100px;
+  line-height: 1.4; }
+
+.f100px img.emoji {
+  height: 100px;
+  max-height: 72px; }
+
+.f101px p,
+.f101px li,
+.f101px td {
+  font-size: 101px;
+  line-height: 1.4; }
+.f101px small {
+  font-size: 85.85px; }
+
+span.f101px {
+  font-size: 101px;
+  line-height: 1.4; }
+
+.f101px img.emoji {
+  height: 101px;
+  max-height: 72px; }
+
+.f102px p,
+.f102px li,
+.f102px td {
+  font-size: 102px;
+  line-height: 1.4; }
+.f102px small {
+  font-size: 86.7px; }
+
+span.f102px {
+  font-size: 102px;
+  line-height: 1.4; }
+
+.f102px img.emoji {
+  height: 102px;
+  max-height: 72px; }
+
+.f103px p,
+.f103px li,
+.f103px td {
+  font-size: 103px;
+  line-height: 1.4; }
+.f103px small {
+  font-size: 87.55px; }
+
+span.f103px {
+  font-size: 103px;
+  line-height: 1.4; }
+
+.f103px img.emoji {
+  height: 103px;
+  max-height: 72px; }
+
+.f104px p,
+.f104px li,
+.f104px td {
+  font-size: 104px;
+  line-height: 1.4; }
+.f104px small {
+  font-size: 88.4px; }
+
+span.f104px {
+  font-size: 104px;
+  line-height: 1.4; }
+
+.f104px img.emoji {
+  height: 104px;
+  max-height: 72px; }
+
+.f105px p,
+.f105px li,
+.f105px td {
+  font-size: 105px;
+  line-height: 1.4; }
+.f105px small {
+  font-size: 89.25px; }
+
+span.f105px {
+  font-size: 105px;
+  line-height: 1.4; }
+
+.f105px img.emoji {
+  height: 105px;
+  max-height: 72px; }
+
+.f106px p,
+.f106px li,
+.f106px td {
+  font-size: 106px;
+  line-height: 1.4; }
+.f106px small {
+  font-size: 90.1px; }
+
+span.f106px {
+  font-size: 106px;
+  line-height: 1.4; }
+
+.f106px img.emoji {
+  height: 106px;
+  max-height: 72px; }
+
+.f107px p,
+.f107px li,
+.f107px td {
+  font-size: 107px;
+  line-height: 1.4; }
+.f107px small {
+  font-size: 90.95px; }
+
+span.f107px {
+  font-size: 107px;
+  line-height: 1.4; }
+
+.f107px img.emoji {
+  height: 107px;
+  max-height: 72px; }
+
+.f108px p,
+.f108px li,
+.f108px td {
+  font-size: 108px;
+  line-height: 1.4; }
+.f108px small {
+  font-size: 91.8px; }
+
+span.f108px {
+  font-size: 108px;
+  line-height: 1.4; }
+
+.f108px img.emoji {
+  height: 108px;
+  max-height: 72px; }
+
+.f109px p,
+.f109px li,
+.f109px td {
+  font-size: 109px;
+  line-height: 1.4; }
+.f109px small {
+  font-size: 92.65px; }
+
+span.f109px {
+  font-size: 109px;
+  line-height: 1.4; }
+
+.f109px img.emoji {
+  height: 109px;
+  max-height: 72px; }
+
+.f110px p,
+.f110px li,
+.f110px td {
+  font-size: 110px;
+  line-height: 1.4; }
+.f110px small {
+  font-size: 93.5px; }
+
+span.f110px {
+  font-size: 110px;
+  line-height: 1.4; }
+
+.f110px img.emoji {
+  height: 110px;
+  max-height: 72px; }
+
+.f111px p,
+.f111px li,
+.f111px td {
+  font-size: 111px;
+  line-height: 1.4; }
+.f111px small {
+  font-size: 94.35px; }
+
+span.f111px {
+  font-size: 111px;
+  line-height: 1.4; }
+
+.f111px img.emoji {
+  height: 111px;
+  max-height: 72px; }
+
+.f112px p,
+.f112px li,
+.f112px td {
+  font-size: 112px;
+  line-height: 1.4; }
+.f112px small {
+  font-size: 95.2px; }
+
+span.f112px {
+  font-size: 112px;
+  line-height: 1.4; }
+
+.f112px img.emoji {
+  height: 112px;
+  max-height: 72px; }
+
+.f113px p,
+.f113px li,
+.f113px td {
+  font-size: 113px;
+  line-height: 1.4; }
+.f113px small {
+  font-size: 96.05px; }
+
+span.f113px {
+  font-size: 113px;
+  line-height: 1.4; }
+
+.f113px img.emoji {
+  height: 113px;
+  max-height: 72px; }
+
+.f114px p,
+.f114px li,
+.f114px td {
+  font-size: 114px;
+  line-height: 1.4; }
+.f114px small {
+  font-size: 96.9px; }
+
+span.f114px {
+  font-size: 114px;
+  line-height: 1.4; }
+
+.f114px img.emoji {
+  height: 114px;
+  max-height: 72px; }
+
+.f115px p,
+.f115px li,
+.f115px td {
+  font-size: 115px;
+  line-height: 1.4; }
+.f115px small {
+  font-size: 97.75px; }
+
+span.f115px {
+  font-size: 115px;
+  line-height: 1.4; }
+
+.f115px img.emoji {
+  height: 115px;
+  max-height: 72px; }
+
+.f116px p,
+.f116px li,
+.f116px td {
+  font-size: 116px;
+  line-height: 1.4; }
+.f116px small {
+  font-size: 98.6px; }
+
+span.f116px {
+  font-size: 116px;
+  line-height: 1.4; }
+
+.f116px img.emoji {
+  height: 116px;
+  max-height: 72px; }
+
+.f117px p,
+.f117px li,
+.f117px td {
+  font-size: 117px;
+  line-height: 1.4; }
+.f117px small {
+  font-size: 99.45px; }
+
+span.f117px {
+  font-size: 117px;
+  line-height: 1.4; }
+
+.f117px img.emoji {
+  height: 117px;
+  max-height: 72px; }
+
+.f118px p,
+.f118px li,
+.f118px td {
+  font-size: 118px;
+  line-height: 1.4; }
+.f118px small {
+  font-size: 100.3px; }
+
+span.f118px {
+  font-size: 118px;
+  line-height: 1.4; }
+
+.f118px img.emoji {
+  height: 118px;
+  max-height: 72px; }
+
+.f119px p,
+.f119px li,
+.f119px td {
+  font-size: 119px;
+  line-height: 1.4; }
+.f119px small {
+  font-size: 101.15px; }
+
+span.f119px {
+  font-size: 119px;
+  line-height: 1.4; }
+
+.f119px img.emoji {
+  height: 119px;
+  max-height: 72px; }
+
+.f120px p,
+.f120px li,
+.f120px td {
+  font-size: 120px;
+  line-height: 1.4; }
+.f120px small {
+  font-size: 102px; }
+
+span.f120px {
+  font-size: 120px;
+  line-height: 1.4; }
+
+.f120px img.emoji {
+  height: 120px;
+  max-height: 72px; }
+
+.f121px p,
+.f121px li,
+.f121px td {
+  font-size: 121px;
+  line-height: 1.4; }
+.f121px small {
+  font-size: 102.85px; }
+
+span.f121px {
+  font-size: 121px;
+  line-height: 1.4; }
+
+.f121px img.emoji {
+  height: 121px;
+  max-height: 72px; }
+
+.f122px p,
+.f122px li,
+.f122px td {
+  font-size: 122px;
+  line-height: 1.4; }
+.f122px small {
+  font-size: 103.7px; }
+
+span.f122px {
+  font-size: 122px;
+  line-height: 1.4; }
+
+.f122px img.emoji {
+  height: 122px;
+  max-height: 72px; }
+
+.f123px p,
+.f123px li,
+.f123px td {
+  font-size: 123px;
+  line-height: 1.4; }
+.f123px small {
+  font-size: 104.55px; }
+
+span.f123px {
+  font-size: 123px;
+  line-height: 1.4; }
+
+.f123px img.emoji {
+  height: 123px;
+  max-height: 72px; }
+
+.f124px p,
+.f124px li,
+.f124px td {
+  font-size: 124px;
+  line-height: 1.4; }
+.f124px small {
+  font-size: 105.4px; }
+
+span.f124px {
+  font-size: 124px;
+  line-height: 1.4; }
+
+.f124px img.emoji {
+  height: 124px;
+  max-height: 72px; }
+
+.f125px p,
+.f125px li,
+.f125px td {
+  font-size: 125px;
+  line-height: 1.4; }
+.f125px small {
+  font-size: 106.25px; }
+
+span.f125px {
+  font-size: 125px;
+  line-height: 1.4; }
+
+.f125px img.emoji {
+  height: 125px;
+  max-height: 72px; }
+
+.f126px p,
+.f126px li,
+.f126px td {
+  font-size: 126px;
+  line-height: 1.4; }
+.f126px small {
+  font-size: 107.1px; }
+
+span.f126px {
+  font-size: 126px;
+  line-height: 1.4; }
+
+.f126px img.emoji {
+  height: 126px;
+  max-height: 72px; }
+
+.f127px p,
+.f127px li,
+.f127px td {
+  font-size: 127px;
+  line-height: 1.4; }
+.f127px small {
+  font-size: 107.95px; }
+
+span.f127px {
+  font-size: 127px;
+  line-height: 1.4; }
+
+.f127px img.emoji {
+  height: 127px;
+  max-height: 72px; }
+
+.f128px p,
+.f128px li,
+.f128px td {
+  font-size: 128px;
+  line-height: 1.4; }
+.f128px small {
+  font-size: 108.8px; }
+
+span.f128px {
+  font-size: 128px;
+  line-height: 1.4; }
+
+.f128px img.emoji {
+  height: 128px;
+  max-height: 72px; }
+
+.f129px p,
+.f129px li,
+.f129px td {
+  font-size: 129px;
+  line-height: 1.4; }
+.f129px small {
+  font-size: 109.65px; }
+
+span.f129px {
+  font-size: 129px;
+  line-height: 1.4; }
+
+.f129px img.emoji {
+  height: 129px;
+  max-height: 72px; }
+
+.f130px p,
+.f130px li,
+.f130px td {
+  font-size: 130px;
+  line-height: 1.4; }
+.f130px small {
+  font-size: 110.5px; }
+
+span.f130px {
+  font-size: 130px;
+  line-height: 1.4; }
+
+.f130px img.emoji {
+  height: 130px;
+  max-height: 72px; }
+
+.f131px p,
+.f131px li,
+.f131px td {
+  font-size: 131px;
+  line-height: 1.4; }
+.f131px small {
+  font-size: 111.35px; }
+
+span.f131px {
+  font-size: 131px;
+  line-height: 1.4; }
+
+.f131px img.emoji {
+  height: 131px;
+  max-height: 72px; }
+
+.f132px p,
+.f132px li,
+.f132px td {
+  font-size: 132px;
+  line-height: 1.4; }
+.f132px small {
+  font-size: 112.2px; }
+
+span.f132px {
+  font-size: 132px;
+  line-height: 1.4; }
+
+.f132px img.emoji {
+  height: 132px;
+  max-height: 72px; }
+
+.f133px p,
+.f133px li,
+.f133px td {
+  font-size: 133px;
+  line-height: 1.4; }
+.f133px small {
+  font-size: 113.05px; }
+
+span.f133px {
+  font-size: 133px;
+  line-height: 1.4; }
+
+.f133px img.emoji {
+  height: 133px;
+  max-height: 72px; }
+
+.f134px p,
+.f134px li,
+.f134px td {
+  font-size: 134px;
+  line-height: 1.4; }
+.f134px small {
+  font-size: 113.9px; }
+
+span.f134px {
+  font-size: 134px;
+  line-height: 1.4; }
+
+.f134px img.emoji {
+  height: 134px;
+  max-height: 72px; }
+
+.f135px p,
+.f135px li,
+.f135px td {
+  font-size: 135px;
+  line-height: 1.4; }
+.f135px small {
+  font-size: 114.75px; }
+
+span.f135px {
+  font-size: 135px;
+  line-height: 1.4; }
+
+.f135px img.emoji {
+  height: 135px;
+  max-height: 72px; }
+
+.f136px p,
+.f136px li,
+.f136px td {
+  font-size: 136px;
+  line-height: 1.4; }
+.f136px small {
+  font-size: 115.6px; }
+
+span.f136px {
+  font-size: 136px;
+  line-height: 1.4; }
+
+.f136px img.emoji {
+  height: 136px;
+  max-height: 72px; }
+
+.f137px p,
+.f137px li,
+.f137px td {
+  font-size: 137px;
+  line-height: 1.4; }
+.f137px small {
+  font-size: 116.45px; }
+
+span.f137px {
+  font-size: 137px;
+  line-height: 1.4; }
+
+.f137px img.emoji {
+  height: 137px;
+  max-height: 72px; }
+
+.f138px p,
+.f138px li,
+.f138px td {
+  font-size: 138px;
+  line-height: 1.4; }
+.f138px small {
+  font-size: 117.3px; }
+
+span.f138px {
+  font-size: 138px;
+  line-height: 1.4; }
+
+.f138px img.emoji {
+  height: 138px;
+  max-height: 72px; }
+
+.f139px p,
+.f139px li,
+.f139px td {
+  font-size: 139px;
+  line-height: 1.4; }
+.f139px small {
+  font-size: 118.15px; }
+
+span.f139px {
+  font-size: 139px;
+  line-height: 1.4; }
+
+.f139px img.emoji {
+  height: 139px;
+  max-height: 72px; }
+
+.f140px p,
+.f140px li,
+.f140px td {
+  font-size: 140px;
+  line-height: 1.4; }
+.f140px small {
+  font-size: 119px; }
+
+span.f140px {
+  font-size: 140px;
+  line-height: 1.4; }
+
+.f140px img.emoji {
+  height: 140px;
+  max-height: 72px; }
+
+.f141px p,
+.f141px li,
+.f141px td {
+  font-size: 141px;
+  line-height: 1.4; }
+.f141px small {
+  font-size: 119.85px; }
+
+span.f141px {
+  font-size: 141px;
+  line-height: 1.4; }
+
+.f141px img.emoji {
+  height: 141px;
+  max-height: 72px; }
+
+.f142px p,
+.f142px li,
+.f142px td {
+  font-size: 142px;
+  line-height: 1.4; }
+.f142px small {
+  font-size: 120.7px; }
+
+span.f142px {
+  font-size: 142px;
+  line-height: 1.4; }
+
+.f142px img.emoji {
+  height: 142px;
+  max-height: 72px; }
+
+.f143px p,
+.f143px li,
+.f143px td {
+  font-size: 143px;
+  line-height: 1.4; }
+.f143px small {
+  font-size: 121.55px; }
+
+span.f143px {
+  font-size: 143px;
+  line-height: 1.4; }
+
+.f143px img.emoji {
+  height: 143px;
+  max-height: 72px; }
+
+.f144px p,
+.f144px li,
+.f144px td {
+  font-size: 144px;
+  line-height: 1.4; }
+.f144px small {
+  font-size: 122.4px; }
+
+span.f144px {
+  font-size: 144px;
+  line-height: 1.4; }
+
+.f144px img.emoji {
+  height: 144px;
+  max-height: 72px; }
+
+.f145px p,
+.f145px li,
+.f145px td {
+  font-size: 145px;
+  line-height: 1.4; }
+.f145px small {
+  font-size: 123.25px; }
+
+span.f145px {
+  font-size: 145px;
+  line-height: 1.4; }
+
+.f145px img.emoji {
+  height: 145px;
+  max-height: 72px; }
+
+.f146px p,
+.f146px li,
+.f146px td {
+  font-size: 146px;
+  line-height: 1.4; }
+.f146px small {
+  font-size: 124.1px; }
+
+span.f146px {
+  font-size: 146px;
+  line-height: 1.4; }
+
+.f146px img.emoji {
+  height: 146px;
+  max-height: 72px; }
+
+.f147px p,
+.f147px li,
+.f147px td {
+  font-size: 147px;
+  line-height: 1.4; }
+.f147px small {
+  font-size: 124.95px; }
+
+span.f147px {
+  font-size: 147px;
+  line-height: 1.4; }
+
+.f147px img.emoji {
+  height: 147px;
+  max-height: 72px; }
+
+.f148px p,
+.f148px li,
+.f148px td {
+  font-size: 148px;
+  line-height: 1.4; }
+.f148px small {
+  font-size: 125.8px; }
+
+span.f148px {
+  font-size: 148px;
+  line-height: 1.4; }
+
+.f148px img.emoji {
+  height: 148px;
+  max-height: 72px; }
+
+.f149px p,
+.f149px li,
+.f149px td {
+  font-size: 149px;
+  line-height: 1.4; }
+.f149px small {
+  font-size: 126.65px; }
+
+span.f149px {
+  font-size: 149px;
+  line-height: 1.4; }
+
+.f149px img.emoji {
+  height: 149px;
+  max-height: 72px; }
+
+.f150px p,
+.f150px li,
+.f150px td {
+  font-size: 150px;
+  line-height: 1.4; }
+.f150px small {
+  font-size: 127.5px; }
+
+span.f150px {
+  font-size: 150px;
+  line-height: 1.4; }
+
+.f150px img.emoji {
+  height: 150px;
+  max-height: 72px; }
