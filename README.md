@@ -63,6 +63,12 @@ You can configure slide shows with the following keys in each slide's metadata b
 * **twitter_name_start** – Set to the first slide on which to display the Twitter information
 * **progress_bar** – Set to `true` to display a progress bar instead of the default "X/XX" slide numbers
 
+## Editing Slides
+
+On your local computer, running `bundle exec middleman serve` from the command line will start a development server that runs at [http://localhost:4567](http://localhost:4567). You can update slides on your local computer and reload to see changes, before deploying (see below).
+
+**Note** – The one shortcoming of this program is that new slideshow files have to be created before starting the development server. Otherwise, Middleman won't detect them.
+
 ## Styling Slides
 
 There are a lot of customizable aspects of slides. It is recommended to take a look at [`_remark-utilities.scss`](source/stylesheets/_remark-utilities.scss) to see everything.
