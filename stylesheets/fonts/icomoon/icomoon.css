@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
-  src: url(/slides/assets/icomoon/icomoon.eot?195opb);
-  src: url(/slides/assets/icomoon/icomoon.eot?195opb#iefix) format("embedded-opentype"), url(/slides/assets/icomoon/icomoon.ttf?195opb) format("truetype"), url(/slides/assets/icomoon/icomoon.woff?195opb) format("woff"), url(/slides/assets/icomoon/icomoon.svg?195opb#icomoon) format("svg");
+  src: url(/slide-repository/assets/icomoon/icomoon.eot?195opb);
+  src: url(/slide-repository/assets/icomoon/icomoon.eot?195opb#iefix) format("embedded-opentype"), url(/slide-repository/assets/icomoon/icomoon.ttf?195opb) format("truetype"), url(/slide-repository/assets/icomoon/icomoon.woff?195opb) format("woff"), url(/slide-repository/assets/icomoon/icomoon.svg?195opb#icomoon) format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
