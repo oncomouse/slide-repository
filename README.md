@@ -1,11 +1,16 @@
 # slide-repository
 
+Use [Middelman](https://middlemanapp.com/) and [RemarkJS](https://remarkjs.com/#1) to build slideshows using Markdown!
+
 ## Setup
 
 ### Dependencies
 
+You need the following software installed to use slide-repository:
+
 * [Ruby](https://www.ruby-lang.org/)
 * [Bundler](http://bundler.io/)
+    - With a working Ruby install, run `gem install bundler`
 
 ### Instructions
 
