@@ -37,7 +37,11 @@ html {
 		}
 	}
 }
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
 	font: {
 		family: $header-font;
 		weight: $header-font-weight;
@@ -75,23 +79,28 @@ html * {
 	color-profile: sRGB;
 	rendering-intent: auto;
 }
-.emph, strong {
+.emph,
+strong {
 	color: $emphasis-color;
 }
-a, a > code {
+a,
+a > code {
 	color: $link-color;
 }
 .inverse {
 	background: $inverse-background-color;
 	color: $inverse-font-color;
-	h1, h2 {
+	h1,
+	h2 {
 		text-shadow: 1px 1px 2px rgba($inverse-shadow-color, 0.2);
 	}
 }
 .left-column {
 	color: $base-light-font-color;
 
-	h1, h2, h3 {
+	h1,
+	h2,
+	h3 {
 		color: $base-light-font-color;
 	}
 
@@ -126,7 +135,12 @@ a, a > code {
 // For more on using Neat, see: http://neat.bourbon.io/
 .remark-slide-content {
 	@include grid-container;
-	& > h1,& > h2,& > h3,& > h4,& > h5,& > h6 {
+	& > h1,
+	& > h2,
+	& > h3,
+	& > h4,
+	& > h5,
+	& > h6 {
 		&:first-child {
 			margin-top: 0;
 		}
@@ -150,7 +164,8 @@ a, a > code {
 .twitter_badge {
 	position: relative;
 	margin-left: 1.15em;
-	&:before, &:after {
+	&:before,
+	&:after {
 		font-family: "icomoon";
 		speak: none;
 		font-style: normal;
@@ -209,7 +224,8 @@ a, a > code {
 	column-width: 44%;
 	column-gap: 6%;
 	column-fill: auto;
-	h1,h2 {
+	h1,
+	h2 {
 		column-span: all;
 	}
 }
@@ -246,7 +262,8 @@ a, a > code {
 }
 // Turn off list bullets/numbers:
 .no-bullets {
-	ol, ul {
+	ol,
+	ul {
 		list-style: none;
 	}
 }
@@ -264,7 +281,11 @@ a, a > code {
 // Class to bunch titles together:
 .title-block {
 	margin: 1.75em 0;
-	h1,h2,h3,h4,h5 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
 		line-height: 1.1em;
 		margin: 0;
 	}
@@ -300,7 +321,8 @@ a, a > code {
 }
 // Formatting for works cited (use a bulleted list):
 .works-cited {
-	ul, ol {
+	ul,
+	ol {
 		list: {
 			style-type: none;
 		}
@@ -332,7 +354,8 @@ a, a > code {
 // Put in text/image but make it invisible:
 .phantom {
 	color: $base-background-color !important;
-	img, img.phantom {
+	img,
+	img.phantom {
 		opacity: 0;
 	}
 }
@@ -349,7 +372,9 @@ a, a > code {
 // Set class: f5px to f150px for the slide class for precise font sizing:
 @for $i from 5 through 150 {
 	.f#{$i}px {
-		p, li, td {
+		p,
+		li,
+		td {
 			font-size: $i * 1px;
 			line-height: 1.4;
 		}
