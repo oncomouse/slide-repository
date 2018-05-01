@@ -29,4 +29,5 @@ source "https://rails-assets.org" do
 	gem "rails-assets-icomoon"
 	gem "rails-assets-open-sans"
 	gem "rails-assets-twemoji"
+    gem "rails-assets-mermaid"
 end
