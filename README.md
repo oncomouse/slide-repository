@@ -62,12 +62,17 @@ You can configure slide shows with the following keys in each slide's metadata b
 * **twitter_name** – Set to the Twitter name to display (don't need to include an "@")
 * **twitter_name_start** – Set to the first slide on which to display the Twitter information
 * **progress_bar** – Set to `true` to display a progress bar instead of the default "X/XX" slide numbers
+* **lightning** – To auto-advance each slide after a certain number of seconds, set this to the number of seconds per slide (for instance, `60` for one minute per slide).
 
 ## Editing Slides
 
 On your local computer, running `bundle exec middleman serve` from the command line will start a development server that runs at [http://localhost:4567](http://localhost:4567). You can update slides on your local computer and reload to see changes, before deploying (see below).
 
 **Note** – The one shortcoming of this program is that new slideshow files have to be created before starting the development server. Otherwise, Middleman won't detect them.
+
+### Lightning Talks!
+
+See "YAML Metadata Keys" (above) on how to set slide metadata. If you set the `lightning` metadata key to the number of seconds to display each slide, you can make autoadvancing slides for lightning talks!
 
 ## Styling Slides
 

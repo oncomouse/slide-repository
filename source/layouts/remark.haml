@@ -123,6 +123,14 @@
 						touch: true
 					}
 				});
+				// Lightning Timer!
+				var lightningTimer = #{!slide_configuration_data["lightning"].nil? ? slide_configuration_data["lightning"] * 1000 : 0};
+				if(lightningTimer > 0) {
+					var lightningInterval = setInterval(function moveLightningSlide() {
+						slideshow.gotoNextSlide();
+					}, lightningTimer);
+					document.addEventListener('beforeunload', function() { clearInterval(lightningInterval); });
+				}
 				/*var image_scalar = {width: 0.85, height: 0.75 };
 				$(window).on('resize', function() {
 					$('img').css('max-width', parseInt($('.remark-slide-scaler').css('width')) * image_scalar["width"] + 'px');
