@@ -68,6 +68,8 @@ ready do
     ignore "remark_markdown_template.html"
 end
 
+activate :livereload, host: "0.0.0.0"
+
 activate :sprockets
 if defined? RailsAssets
   RailsAssets.load_paths.each do |path|

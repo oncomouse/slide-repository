@@ -10,7 +10,8 @@ gem "middleman-sprockets"
 gem "middleman-autoprefixer", "~> 2.7"
 gem "middleman-compass"
 gem "middleman-deploy", github: "middleman-contrib/middleman-deploy", branch: "master"
-gem "opal"
+gem "middleman-livereload"
+gem 'opal', '~> 0.10.5'
 
 gem "kramdown"
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
@@ -23,7 +24,7 @@ source "https://rails-assets.org" do
     gem "rails-assets-nvd3", "~>1.1.15.beta"
     gem "rails-assets-remark", ">=0.13.0"
     gem "rails-assets-zepto", "~>1.1.4"
-    gem "rails-assets-bourbon", ">=4.2.7"
+    gem "rails-assets-bourbon", "~>4"
     gem "rails-assets-neat", "2.0.0"
 	gem "rails-assets-icomoon"
 	gem "rails-assets-open-sans"
