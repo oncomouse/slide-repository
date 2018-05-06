@@ -10,7 +10,6 @@ gem "middleman-sprockets"
 gem "middleman-autoprefixer", "~> 2.7"
 gem "middleman-compass"
 gem "middleman-deploy", github: "middleman-contrib/middleman-deploy", branch: "master"
-gem "middleman-livereload"
 gem 'opal', '~> 0.10.5'
 
 gem "kramdown"
